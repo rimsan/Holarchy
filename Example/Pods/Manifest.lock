@@ -1,0 +1,20 @@
+PODS:
+  - Expecta (1.0.2)
+  - Holarchy (0.1.0)
+  - Specta (1.0.3)
+
+DEPENDENCIES:
+  - Expecta
+  - Holarchy (from `../`)
+  - Specta
+
+EXTERNAL SOURCES:
+  Holarchy:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  Expecta: 54e8a3530add08f4f0208c111355eda7cde74a53
+  Holarchy: 4c08006fd00c03f92d1c93ff6f03f678fee46c64
+  Specta: cf3e4188cf35375c3ee2cd03f8db8f1f4ef98234
+
+COCOAPODS: 0.37.2

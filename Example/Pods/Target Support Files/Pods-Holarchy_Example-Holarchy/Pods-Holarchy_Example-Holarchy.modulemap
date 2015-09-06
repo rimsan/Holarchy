@@ -1,0 +1,6 @@
+framework module Holarchy {
+  umbrella header "Pods-Holarchy_Example-Holarchy-umbrella.h"
+
+  export *
+  module * { export * }
+}
