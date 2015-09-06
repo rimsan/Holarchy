@@ -9,17 +9,19 @@
 Pod::Spec.new do |s|
   s.name             = "Holarchy"
   s.version          = "0.1.0"
-  s.summary          = "A short description of Holarchy."
+  s.summary          = "A subclass of UIScrollView that provides painless building of forms etc."
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
 #   * Try to keep it short, snappy and to the point.
 #   * Write the description between the DESC delimiters below.
 #   * Finally, don't worry about the indent, CocoaPods strips it!  
-  s.description      = <<-DESC
-                       DESC
+  s.description      = %{
+        A subclass of UIScrollView that provides painless building of forms etc.
+}
 
-  s.homepage         = "https://github.com/<GITHUB_USERNAME>/Holarchy"
+
+  s.homepage         = "https://github.com/rimsan/Holarchy"
   # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
   s.license          = 'MIT'
   s.author           = { "Roman Petryshen" => "roman@travelbird.com" }
