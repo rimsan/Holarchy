@@ -6,6 +6,11 @@
 #import "HOLFlowView.h"
 #import "HOLFlowView+PrivateHeader.h"
 #import "UIView+FlowConstraints.h"
+#import <objc/runtime.h>
+
+static BOOL isObjectIsSubclassOfUIView(id object) {
+    return class_isMetaClass(object_getClass(object)) && [(Class) object isSubclassOfClass:[UIView class]];
+}
 
 @implementation HOLFlowView
 

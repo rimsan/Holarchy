@@ -5,11 +5,7 @@
 
 #import <Foundation/Foundation.h>
 #import "HOLFlowView.h"
-#import <objc/runtime.h>
 
-static BOOL isObjectIsSubclassOfUIView(id object) {
-    return class_isMetaClass(object_getClass(object)) && [(Class) object isSubclassOfClass:[UIView class]];
-}
 
 typedef NS_ENUM(NSInteger, HOLFlowViewDirection) {
     HOLFlowViewDirectionNone,
