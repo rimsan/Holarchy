@@ -3,36 +3,36 @@
 // Copyright (c) 2015 Roman Petryshen. All rights reserved.
 //
 
-#import "UIView+FlowConstraints.h"
+#import "UIView+HOLAdditions.h"
 
-@implementation UIView (FlowConstraints)
+@implementation UIView (HOLAdditions)
 
-- (NSLayoutConstraint *)makeExternalPrimaryEdgeEqualTo:(UIView *)view withDirection:(HOLFlowViewDirection)direction {
-    return [self make:[self attributeForExternalPrimaryEdgeWithDirection:direction]
-              equalTo:view];
+- (NSLayoutConstraint *)hol_makeExternalPrimaryEdgeEqualTo:(UIView *)view withDirection:(HOLFlowViewDirection)direction {
+    return [self hol_make:[self attributeForExternalPrimaryEdgeWithDirection:direction]
+                  equalTo:view];
 }
 
 - (NSLayoutAttribute)attributeForExternalPrimaryEdgeWithDirection:(HOLFlowViewDirection)direction {
-    return [self isVertical:direction] ? NSLayoutAttributeLeft : NSLayoutAttributeTop;
+    return [self hol_isVertical:direction] ? NSLayoutAttributeLeft : NSLayoutAttributeTop;
 }
 
 
-- (NSLayoutConstraint *)makeExternalSecondaryEdgeEqualTo:(UIView *)view withDirection:(HOLFlowViewDirection)direction {
-    return [self make:[self attributeForExternalSecondaryEdgeWithDirection:direction]
-              equalTo:view];
+- (NSLayoutConstraint *)hol_makeExternalSecondaryEdgeEqualTo:(UIView *)view withDirection:(HOLFlowViewDirection)direction {
+    return [self hol_make:[self hol_attributeForExternalSecondaryEdgeWithDirection:direction]
+                  equalTo:view];
 }
 
-- (NSLayoutAttribute)attributeForExternalSecondaryEdgeWithDirection:(HOLFlowViewDirection)direction {
-    return [self isVertical:direction] ? NSLayoutAttributeRight : NSLayoutAttributeBottom;
+- (NSLayoutAttribute)hol_attributeForExternalSecondaryEdgeWithDirection:(HOLFlowViewDirection)direction {
+    return [self hol_isVertical:direction] ? NSLayoutAttributeRight : NSLayoutAttributeBottom;
 }
 
 
-- (NSLayoutConstraint *)makeLeadingEdgeEqualTo:(UIView *)view withDirection:(HOLFlowViewDirection)direction {
-    return [self make:[self attributeForLeadingEdgeWithDirection:direction]
-              equalTo:view];
+- (NSLayoutConstraint *)hol_makeLeadingEdgeEqualTo:(UIView *)view withDirection:(HOLFlowViewDirection)direction {
+    return [self hol_make:[self hol_attributeForLeadingEdgeWithDirection:direction]
+                  equalTo:view];
 }
 
-- (NSLayoutAttribute)attributeForLeadingEdgeWithDirection:(HOLFlowViewDirection)direction {
+- (NSLayoutAttribute)hol_attributeForLeadingEdgeWithDirection:(HOLFlowViewDirection)direction {
     NSLayoutAttribute attribute = NSLayoutAttributeNotAnAttribute;
 
     switch (direction) {
@@ -59,12 +59,12 @@
 }
 
 
-- (NSLayoutConstraint *)makeTrailingEdgeEqualTo:(UIView *)view withDirection:(HOLFlowViewDirection)direction {
-    return [self make:[self attributeForTrailingEdgeWithDirection:direction]
-              equalTo:view];
+- (NSLayoutConstraint *)hol_makeTrailingEdgeEqualTo:(UIView *)view withDirection:(HOLFlowViewDirection)direction {
+    return [self hol_make:[self hol_attributeForTrailingEdgeWithDirection:direction]
+                  equalTo:view];
 }
 
-- (NSLayoutAttribute)attributeForTrailingEdgeWithDirection:(HOLFlowViewDirection)direction {
+- (NSLayoutAttribute)hol_attributeForTrailingEdgeWithDirection:(HOLFlowViewDirection)direction {
     NSLayoutAttribute attribute = NSLayoutAttributeNotAnAttribute;
 
     switch (direction) {
@@ -91,14 +91,14 @@
     return attribute;
 }
 
-- (NSLayoutConstraint *)makeLeadingEqualToTrailingOf:(UIView *)view
-                                       withDirection:(HOLFlowViewDirection)direction {
+- (NSLayoutConstraint *)hol_makeLeadingEqualToTrailingOf:(UIView *)view
+                                           withDirection:(HOLFlowViewDirection)direction {
 
     NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:self
-                                                                  attribute:[self attributeForLeadingEdgeWithDirection:direction]
+                                                                  attribute:[self hol_attributeForLeadingEdgeWithDirection:direction]
                                                                   relatedBy:NSLayoutRelationEqual
                                                                      toItem:view
-                                                                  attribute:[self attributeForTrailingEdgeWithDirection:direction]
+                                                                  attribute:[self hol_attributeForTrailingEdgeWithDirection:direction]
                                                                  multiplier:1
                                                                    constant:0];
     [self.superview addConstraint:constraint];
@@ -106,26 +106,19 @@
 }
 
 
-- (BOOL)isVertical:(HOLFlowViewDirection)direction {
+- (BOOL)hol_isVertical:(HOLFlowViewDirection)direction {
     return direction > HOLFlowViewDirectionLeft;
 }
 
-- (NSLayoutConstraint *)makeWidthEqualTo:(UIView *)view {
-    return [self make:NSLayoutAttributeWidth equalTo:view];
+- (NSLayoutConstraint *)hol_makeWidthEqualTo:(UIView *)view {
+    return [self hol_make:NSLayoutAttributeWidth equalTo:view];
 }
 
-- (NSLayoutConstraint *)makeHeightEqualTo:(UIView *)view {
-    return [self make:NSLayoutAttributeHeight equalTo:view];
+- (NSLayoutConstraint *)hol_makeHeightEqualTo:(UIView *)view {
+    return [self hol_make:NSLayoutAttributeHeight equalTo:view];
 }
 
-- (void)makeEdgesEqualTo:(UIView *)view {
-    [self make:NSLayoutAttributeLeading equalTo:view];
-    [self make:NSLayoutAttributeTrailing equalTo:view];
-    [self make:NSLayoutAttributeTop equalTo:view];
-    [self make:NSLayoutAttributeBottom equalTo:view];
-}
-
-- (NSLayoutConstraint *)makeHeightEqualToConstant:(NSNumber *)constant {
+- (NSLayoutConstraint *)hol_makeHeightEqualToConstant:(NSNumber *)constant {
     NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:self
                                                                   attribute:NSLayoutAttributeHeight
                                                                   relatedBy:NSLayoutRelationEqual
@@ -138,7 +131,7 @@
 }
 
 
-- (NSLayoutConstraint *)makeWidthEqualToConstant:(NSNumber *)constant {
+- (NSLayoutConstraint *)hol_makeWidthEqualToConstant:(NSNumber *)constant {
     NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:self
                                                                   attribute:NSLayoutAttributeWidth
                                                                   relatedBy:NSLayoutRelationEqual
@@ -150,29 +143,29 @@
     return constraint;
 }
 
-- (NSLayoutConstraint *)makeRightEqualTo:(UIView *)view {
-    return [self make:NSLayoutAttributeRight equalTo:view];
+- (NSLayoutConstraint *)hol_makeRightEqualTo:(UIView *)view {
+    return [self hol_make:NSLayoutAttributeRight equalTo:view];
 }
 
-- (NSLayoutConstraint *)makeLeftEqualTo:(UIView *)view {
-    return [self make:NSLayoutAttributeLeft equalTo:view];
+- (NSLayoutConstraint *)hol_makeLeftEqualTo:(UIView *)view {
+    return [self hol_make:NSLayoutAttributeLeft equalTo:view];
 }
 
-- (NSLayoutConstraint *)makeTopEqualTo:(UIView *)view {
-    return [self make:NSLayoutAttributeTop equalTo:view];
+- (NSLayoutConstraint *)hol_makeTopEqualTo:(UIView *)view {
+    return [self hol_make:NSLayoutAttributeTop equalTo:view];
 }
 
-- (NSLayoutConstraint *)makeBottomEqualTo:(UIView *)view {
-    return [self make:NSLayoutAttributeBottom equalTo:view];
+- (NSLayoutConstraint *)hol_makeBottomEqualTo:(UIView *)view {
+    return [self hol_make:NSLayoutAttributeBottom equalTo:view];
 }
 
 
-- (NSLayoutConstraint *)make:(NSLayoutAttribute)attribute equalTo:(UIView *)view {
-    NSLayoutConstraint *constraint = [self make:attribute equalTo:view withOffset:0];
+- (NSLayoutConstraint *)hol_make:(NSLayoutAttribute)attribute equalTo:(UIView *)view {
+    NSLayoutConstraint *constraint = [self hol_make:attribute equalTo:view withOffset:0];
     return constraint;
 }
 
-- (NSLayoutConstraint *)make:(NSLayoutAttribute)attribute equalTo:(UIView *)view withOffset:(CGFloat)offset {
+- (NSLayoutConstraint *)hol_make:(NSLayoutAttribute)attribute equalTo:(UIView *)view withOffset:(CGFloat)offset {
     NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:self
                                                                   attribute:attribute
                                                                   relatedBy:NSLayoutRelationEqual
@@ -180,9 +173,30 @@
                                                                   attribute:attribute
                                                                  multiplier:1
                                                                    constant:offset];
-    //TODO replace with findFirstParentView
-    [self.superview addConstraint:constraint];
+
+    UIView *superview = [self hol_closestCommonSuperview:view];
+
+    NSAssert2(superview, @"Couldn't find common superview for views %@ and %@", self, view);
+
+    [superview addConstraint:constraint];
     return constraint;
 }
 
+- (instancetype)hol_closestCommonSuperview:(UIView *)view {
+
+    UIView *closestCommonSuperview = nil;
+    UIView *secondViewSuperview = view;
+
+    while (!closestCommonSuperview && secondViewSuperview) {
+        UIView *firstViewSuperview = self;
+        while (!closestCommonSuperview && firstViewSuperview) {
+            if (secondViewSuperview == firstViewSuperview) {
+                closestCommonSuperview = secondViewSuperview;
+            }
+            firstViewSuperview = firstViewSuperview.superview;
+        }
+        secondViewSuperview = secondViewSuperview.superview;
+    }
+    return closestCommonSuperview;
+}
 @end

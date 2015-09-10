@@ -7,8 +7,8 @@
 
 @interface HOLFlowView : UIScrollView
 
-@property (nonatomic, readonly) UIView *viewsContainer;
+@property (nonatomic, readonly) UIView *contentView;
 
-@property (nonatomic, assign) UIEdgeInsets containerInsets;
+@property (nonatomic, assign) UIEdgeInsets contentViewInsets;
 
 @end

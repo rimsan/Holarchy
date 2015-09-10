@@ -5,7 +5,7 @@
 
 #import "HOLFlowView.h"
 #import "HOLFlowView+PrivateHeader.h"
-#import "UIView+FlowConstraints.h"
+#import "UIView+HOLAdditions.h"
 #import <objc/runtime.h>
 
 static BOOL isObjectIsSubclassOfUIView(id object) {
@@ -78,15 +78,15 @@ static BOOL isObjectIsSubclassOfUIView(id object) {
 
     [self addSubview:container];
 
-    self.containerConstraintLeft = [container make:NSLayoutAttributeLeading equalTo:self];
-    self.containerConstraintRight = [container make:NSLayoutAttributeTrailing equalTo:self];
-    self.containerConstraintTop = [container make:NSLayoutAttributeTop equalTo:self];
-    self.containerConstraintBottom = [container make:NSLayoutAttributeBottom equalTo:self];
+    self.containerConstraintLeft = [container hol_make:NSLayoutAttributeLeading equalTo:self];
+    self.containerConstraintRight = [container hol_make:NSLayoutAttributeTrailing equalTo:self];
+    self.containerConstraintTop = [container hol_make:NSLayoutAttributeTop equalTo:self];
+    self.containerConstraintBottom = [container hol_make:NSLayoutAttributeBottom equalTo:self];
 
     [self ifV:^{
-        self.containerConstraintWidth = [container makeWidthEqualTo:self];
+        self.containerConstraintWidth = [container hol_makeWidthEqualTo:self];
     }     ifH:^{
-        self.containerConstraintHeight = [container makeHeightEqualTo:self];
+        self.containerConstraintHeight = [container hol_makeHeightEqualTo:self];
     }];
 }
 
@@ -123,7 +123,7 @@ static BOOL isObjectIsSubclassOfUIView(id object) {
     UIView *view = [UIView new];
     view.backgroundColor = [UIColor greenColor];
 
-    [view makeHeightEqualToConstant:element];
+    [view hol_makeHeightEqualToConstant:element];
 
     [self addElementWithView:view];
 }
@@ -144,17 +144,17 @@ static BOOL isObjectIsSubclassOfUIView(id object) {
 
     [self.container addSubview:view];
 
-    self.lastExternalPrimaryEdgeConstraint = [view makeExternalPrimaryEdgeEqualTo:self.container
-                                                                    withDirection:self.direction];
-
-    self.lastExternalSecondaryEdgeConstraint = [view makeExternalSecondaryEdgeEqualTo:self.container
+    self.lastExternalPrimaryEdgeConstraint = [view hol_makeExternalPrimaryEdgeEqualTo:self.container
                                                                         withDirection:self.direction];
 
-    [view makeLeadingEdgeEqualTo:self.container
-                   withDirection:self.direction];
+    self.lastExternalSecondaryEdgeConstraint = [view hol_makeExternalSecondaryEdgeEqualTo:self.container
+                                                                            withDirection:self.direction];
 
-    self.lastTrailingConstraint = [view makeTrailingEdgeEqualTo:self.container
-                                                  withDirection:self.direction];
+    [view hol_makeLeadingEdgeEqualTo:self.container
+                       withDirection:self.direction];
+
+    self.lastTrailingConstraint = [view hol_makeTrailingEdgeEqualTo:self.container
+                                                      withDirection:self.direction];
 
 
     [self.container layoutIfNeeded];
@@ -172,17 +172,17 @@ static BOOL isObjectIsSubclassOfUIView(id object) {
     [self.container removeConstraint:self.lastTrailingConstraint];
 
 
-    self.lastExternalPrimaryEdgeConstraint = [view makeExternalPrimaryEdgeEqualTo:self.container
-                                                                    withDirection:self.direction];
-
-    self.lastExternalSecondaryEdgeConstraint = [view makeExternalSecondaryEdgeEqualTo:self.container
+    self.lastExternalPrimaryEdgeConstraint = [view hol_makeExternalPrimaryEdgeEqualTo:self.container
                                                                         withDirection:self.direction];
 
-    [view makeLeadingEqualToTrailingOf:previousView
-                         withDirection:self.direction];
+    self.lastExternalSecondaryEdgeConstraint = [view hol_makeExternalSecondaryEdgeEqualTo:self.container
+                                                                            withDirection:self.direction];
 
-    self.lastTrailingConstraint = [view makeTrailingEdgeEqualTo:self.container
-                                                  withDirection:self.direction];
+    [view hol_makeLeadingEqualToTrailingOf:previousView
+                             withDirection:self.direction];
+
+    self.lastTrailingConstraint = [view hol_makeTrailingEdgeEqualTo:self.container
+                                                      withDirection:self.direction];
 
     [self.container setNeedsLayout];
     self.views = [self.views arrayByAddingObject:view];
@@ -211,11 +211,11 @@ static BOOL isObjectIsSubclassOfUIView(id object) {
     };
 }
 
-- (UIView *)viewsContainer {
+- (UIView *)contentView {
     return self.container;
 }
 
-- (UIEdgeInsets)containerInsets {
+- (UIEdgeInsets)contentViewInsets {
 
     return UIEdgeInsetsMake(
             self.containerConstraintTop.constant,
@@ -225,19 +225,19 @@ static BOOL isObjectIsSubclassOfUIView(id object) {
     );
 }
 
-- (void)setContainerInsets:(UIEdgeInsets)containerInsets {
+- (void)setContentViewInsets:(UIEdgeInsets)contentViewInsets {
 
-    self.containerConstraintTop.constant = ABS(containerInsets.top);
-    self.containerConstraintRight.constant = -1 * ABS(containerInsets.right);
-    self.containerConstraintBottom.constant = -1 * ABS(containerInsets.bottom);
-    self.containerConstraintLeft.constant = ABS(containerInsets.left);
+    self.containerConstraintTop.constant = ABS(contentViewInsets.top);
+    self.containerConstraintRight.constant = -1 * ABS(contentViewInsets.right);
+    self.containerConstraintBottom.constant = -1 * ABS(contentViewInsets.bottom);
+    self.containerConstraintLeft.constant = ABS(contentViewInsets.left);
 
 
     [self ifV:^{
-                self.containerConstraintWidth.constant = -1 * (ABS(containerInsets.right) + ABS(containerInsets.left));
+                self.containerConstraintWidth.constant = -1 * (ABS(contentViewInsets.right) + ABS(contentViewInsets.left));
             }
           ifH:^{
-              self.containerConstraintHeight.constant = -1 * (ABS(containerInsets.top) + ABS(containerInsets.bottom));
+              self.containerConstraintHeight.constant = -1 * (ABS(contentViewInsets.top) + ABS(contentViewInsets.bottom));
           }];
 
     [self setNeedsLayout];
