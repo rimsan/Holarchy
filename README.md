@@ -22,7 +22,7 @@ pod "Holarchy"
 
 ## Author
 
-Roman Petryshen, roman@travelbird.com
+Roman Petryshen, https://twitter.com/RomanPetryshen
 
 ## License
 
