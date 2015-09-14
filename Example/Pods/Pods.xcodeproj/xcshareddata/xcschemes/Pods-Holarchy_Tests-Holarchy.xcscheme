@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C49208AC0FA220FACE21932A"
+               BlueprintIdentifier = "7F535C898E0F348B1F054A10"
                BuildableName = "Holarchy.framework"
                BlueprintName = "Pods-Holarchy_Tests-Holarchy"
                ReferencedContainer = "container:Pods.xcodeproj">

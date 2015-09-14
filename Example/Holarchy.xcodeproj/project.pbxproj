@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		34C792D61BA6ECF700A68B66 /* ContainerInsetsSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C792D01BA6ECF700A68B66 /* ContainerInsetsSpec.m */; };
+		34C792D71BA6ECF700A68B66 /* LayoutCustomizeSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C792D21BA6ECF700A68B66 /* LayoutCustomizeSpec.m */; };
+		34C792D81BA6ECF700A68B66 /* LayoutHeightSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C792D31BA6ECF700A68B66 /* LayoutHeightSpec.m */; };
+		34C792D91BA6ECF700A68B66 /* LayoutMarginsSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C792D41BA6ECF700A68B66 /* LayoutMarginsSpec.m */; };
+		34C792DA1BA6ECF700A68B66 /* LayoutScrollingSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C792D51BA6ECF700A68B66 /* LayoutScrollingSpec.m */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
@@ -19,7 +24,6 @@
 		6003F5B1195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
-		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
 		70884F723B885689A9BBD0D1 /* Pods_Holarchy_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFBC1E15C2512CD4E43202DA /* Pods_Holarchy_Tests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
 		C845E760CCADE8345B848A11 /* Pods_Holarchy_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE0BD212E62CBB4FFDA67134 /* Pods_Holarchy_Example.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
@@ -38,6 +42,12 @@
 /* Begin PBXFileReference section */
 		09FE7AE5D7D19F27DFB08F84 /* Pods-Holarchy_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Holarchy_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Holarchy_Tests/Pods-Holarchy_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		22FB53B565B6C1528C6F70E7 /* Pods-Holarchy_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Holarchy_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Holarchy_Example/Pods-Holarchy_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		34C792D01BA6ECF700A68B66 /* ContainerInsetsSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ContainerInsetsSpec.m; path = Specs/ContainerInsetsSpec.m; sourceTree = "<group>"; };
+		34C792D11BA6ECF700A68B66 /* Helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Helpers.h; path = Specs/Helpers.h; sourceTree = "<group>"; };
+		34C792D21BA6ECF700A68B66 /* LayoutCustomizeSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LayoutCustomizeSpec.m; path = Specs/LayoutCustomizeSpec.m; sourceTree = "<group>"; };
+		34C792D31BA6ECF700A68B66 /* LayoutHeightSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LayoutHeightSpec.m; path = Specs/LayoutHeightSpec.m; sourceTree = "<group>"; };
+		34C792D41BA6ECF700A68B66 /* LayoutMarginsSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LayoutMarginsSpec.m; path = Specs/LayoutMarginsSpec.m; sourceTree = "<group>"; };
+		34C792D51BA6ECF700A68B66 /* LayoutScrollingSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LayoutScrollingSpec.m; path = Specs/LayoutScrollingSpec.m; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* Holarchy_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Holarchy_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6003F58F195388D20070C39A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -55,7 +65,6 @@
 		6003F5AF195388D20070C39A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		6003F5B7195388D20070C39A /* Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Tests-Info.plist"; sourceTree = "<group>"; };
 		6003F5B9195388D20070C39A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		6003F5BB195388D20070C39A /* Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tests.m; sourceTree = "<group>"; };
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		9196ACAC21CCDF869D26E10E /* Holarchy.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Holarchy.podspec; path = ../Holarchy.podspec; sourceTree = "<group>"; };
@@ -102,6 +111,19 @@
 				09FE7AE5D7D19F27DFB08F84 /* Pods-Holarchy_Tests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		34C792CF1BA6ECE400A68B66 /* Specs */ = {
+			isa = PBXGroup;
+			children = (
+				34C792D01BA6ECF700A68B66 /* ContainerInsetsSpec.m */,
+				34C792D11BA6ECF700A68B66 /* Helpers.h */,
+				34C792D21BA6ECF700A68B66 /* LayoutCustomizeSpec.m */,
+				34C792D31BA6ECF700A68B66 /* LayoutHeightSpec.m */,
+				34C792D41BA6ECF700A68B66 /* LayoutMarginsSpec.m */,
+				34C792D51BA6ECF700A68B66 /* LayoutScrollingSpec.m */,
+			);
+			name = Specs;
 			sourceTree = "<group>";
 		};
 		6003F581195388D10070C39A = {
@@ -167,7 +189,7 @@
 		6003F5B5195388D20070C39A /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				6003F5BB195388D20070C39A /* Tests.m */,
+				34C792CF1BA6ECE400A68B66 /* Specs */,
 				6003F5B6195388D20070C39A /* Supporting Files */,
 			);
 			path = Tests;
@@ -400,7 +422,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6003F5BC195388D20070C39A /* Tests.m in Sources */,
+				34C792D91BA6ECF700A68B66 /* LayoutMarginsSpec.m in Sources */,
+				34C792D71BA6ECF700A68B66 /* LayoutCustomizeSpec.m in Sources */,
+				34C792DA1BA6ECF700A68B66 /* LayoutScrollingSpec.m in Sources */,
+				34C792D81BA6ECF700A68B66 /* LayoutHeightSpec.m in Sources */,
+				34C792D61BA6ECF700A68B66 /* ContainerInsetsSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,25 +1,20 @@
 {
   "name": "Holarchy",
   "version": "0.1.0",
-  "summary": "A short description of Holarchy.",
-  "description": "",
-  "homepage": "https://github.com/<GITHUB_USERNAME>/Holarchy",
+  "summary": "A subclass of UIScrollView that provides painless building of forms etc.",
+  "description": "\n        A subclass of UIScrollView that provides painless building of forms etc.\n",
+  "homepage": "https://github.com/rimsan/Holarchy",
   "license": "MIT",
   "authors": {
     "Roman Petryshen": "roman@travelbird.com"
   },
   "source": {
-    "git": "https://github.com/<GITHUB_USERNAME>/Holarchy.git",
+    "git": "https://github.com/rimsan/Holarchy.git",
     "tag": "0.1.0"
   },
   "platforms": {
     "ios": "7.0"
   },
   "requires_arc": true,
-  "source_files": "Pod/Classes/**/*",
-  "resource_bundles": {
-    "Holarchy": [
-      "Pod/Assets/*.png"
-    ]
-  }
+  "source_files": "Holarchy/*"
 }

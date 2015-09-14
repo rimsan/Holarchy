@@ -1,11 +1,13 @@
 PODS:
-  - Expecta (1.0.2)
+  - Expecta (1.0.3)
   - Holarchy (0.1.0)
+  - Masonry (0.6.2)
   - Specta (1.0.3)
 
 DEPENDENCIES:
   - Expecta
   - Holarchy (from `../`)
+  - Masonry
   - Specta
 
 EXTERNAL SOURCES:
@@ -13,8 +15,9 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  Expecta: 54e8a3530add08f4f0208c111355eda7cde74a53
-  Holarchy: 4c08006fd00c03f92d1c93ff6f03f678fee46c64
+  Expecta: 9d1bff6c8b0eeee73a166a2ee898892478927a15
+  Holarchy: cd1e557f8f6d247df90728b36a039bcf738e0c80
+  Masonry: 362e8a1cc0beada4a4c4832d5e863da2a51533be
   Specta: cf3e4188cf35375c3ee2cd03f8db8f1f4ef98234
 
 COCOAPODS: 0.37.2

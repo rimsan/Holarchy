@@ -3,6 +3,7 @@ use_frameworks!
 
 target 'Holarchy_Example', :exclusive => true do
   pod "Holarchy", :path => "../"
+  pod 'Masonry'
 end
 
 target 'Holarchy_Tests', :exclusive => true do
@@ -10,4 +11,5 @@ target 'Holarchy_Tests', :exclusive => true do
 
   pod 'Specta'
   pod 'Expecta'
+  pod 'Masonry'
 end
