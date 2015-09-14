@@ -1,6 +1,6 @@
 # Holarchy
 
-[![CI Status](http://img.shields.io/travis/Roman Petryshen/Holarchy.svg?style=flat)](https://travis-ci.org/Roman Petryshen/Holarchy)
+[![CI Status](http://img.shields.io/travis/rimsan/Holarchy.svg?style=flat)](https://travis-ci.org/rimsan/Holarchy)
 [![Version](https://img.shields.io/cocoapods/v/Holarchy.svg?style=flat)](http://cocoapods.org/pods/Holarchy)
 [![License](https://img.shields.io/cocoapods/l/Holarchy.svg?style=flat)](http://cocoapods.org/pods/Holarchy)
 [![Platform](https://img.shields.io/cocoapods/p/Holarchy.svg?style=flat)](http://cocoapods.org/pods/Holarchy)
@@ -18,6 +18,22 @@ it, simply add the following line to your Podfile:
 
 ```ruby
 pod "Holarchy"
+```
+
+## Examples
+
+```objc
+self.flowScrollView = [HOLVerticalFlowView new];
+
+self.flowScrollView
+  .addView([UILabel new])
+  .withLeftMargin(10)
+  .addView(@120)
+  .customize(^(UIView *view) {
+      view.backgroundColor = [UIColor redColor];
+    })
+    .addView([MyCustomControl class])
+    .withLeftMargin(10);
 ```
 
 ## Author
