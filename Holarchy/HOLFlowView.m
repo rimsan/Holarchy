@@ -211,9 +211,12 @@ static BOOL isObjectIsSubclassOfUIView(id object) {
     };
 }
 
+
 - (UIView *)contentView {
+    
     return self.container;
 }
+
 
 - (UIEdgeInsets)contentViewInsets {
 
@@ -242,6 +245,47 @@ static BOOL isObjectIsSubclassOfUIView(id object) {
 
     [self setNeedsLayout];
     [self layoutIfNeeded];
+}
+
+
+- (UIView *)lastAddedView {
+    
+    return self.views.lastObject;
+}
+
+- (HOLFlowView *(^)(CGFloat))withLastViewSizeConstant {
+    
+    return ^id(CGFloat height) {
+        
+        if (!self.lastAddedView) {
+            return self;
+        }
+        
+        __block NSArray *currentSizeConstraints = nil;
+        
+        [self ifV:^{
+            currentSizeConstraints = [self.lastAddedView hol_findHeightConstraints];
+        } ifH:^{
+            currentSizeConstraints = [self.lastAddedView hol_findWidthConstraints];
+        }];
+        
+        if (currentSizeConstraints) {
+            [self.lastAddedView removeConstraints:currentSizeConstraints];
+        }
+        
+        
+        [self ifV:^{
+            [self.lastAddedView hol_makeHeightEqualToConstant:@(ABS(height))];
+        } ifH:^{
+            [self.lastAddedView hol_makeWidthEqualToConstant:@(ABS(height))];
+        }];
+        
+        [self invalidateIntrinsicContentSize];
+        [self setNeedsLayout];
+        
+        return self;
+    };
+    
 }
 
 

@@ -65,6 +65,12 @@ self.flowScrollView
             .withRightMargin(10);
 ```
 
+Set height for previously added view (existing height constraints will be removed):
+```objc
+self.flowScrollView
+            .addView(self.titleLabel)
+            .withHeight(10);
+```
 
 Customize or create a pointer to previously added view:
 ```objc

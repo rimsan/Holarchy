@@ -23,4 +23,6 @@
 
 - (HOLVerticalFlowView *(^)(CGFloat))withRightMargin;
 
+- (HOLVerticalFlowView *(^)(CGFloat))withHeight;
+
 @end

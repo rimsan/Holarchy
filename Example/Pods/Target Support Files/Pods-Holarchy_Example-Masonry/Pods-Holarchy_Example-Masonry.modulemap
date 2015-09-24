@@ -1,6 +1,0 @@
-framework module Masonry {
-  umbrella header "Pods-Holarchy_Example-Masonry-umbrella.h"
-
-  export *
-  module * { export * }
-}

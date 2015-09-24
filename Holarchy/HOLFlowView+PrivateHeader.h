@@ -34,7 +34,7 @@ typedef NS_ENUM(NSInteger, HOLFlowViewDirection) {
 @property (nonatomic, strong) NSLayoutConstraint *containerConstraintWidth;
 @property (nonatomic, strong) NSLayoutConstraint *containerConstraintHeight;
 
-
+@property (nonatomic, readonly) UIView *lastAddedView;
 
 - (instancetype)initWithDirection:(HOLFlowViewDirection)direction;
 
@@ -42,5 +42,6 @@ typedef NS_ENUM(NSInteger, HOLFlowViewDirection) {
 
 - (HOLFlowView *(^)(CGFloat))withExternalSecondaryEdgeMargin;
 
+- (HOLFlowView *(^)(CGFloat))withLastViewSizeConstant;
 
 @end

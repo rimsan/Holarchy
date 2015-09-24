@@ -7,23 +7,27 @@
 #import "HOLFlowView+PrivateHeader.h"
 
 @interface UIView (HOLAdditions)
-- (NSLayoutConstraint *)hol_makeExternalPrimaryEdgeEqualTo:(UIView *)view withDirection:(HOLFlowViewDirection)direction;
+- (NSLayoutConstraint * _Nonnull)hol_makeExternalPrimaryEdgeEqualTo:(UIView * _Nonnull)view withDirection:(HOLFlowViewDirection)direction;
 
-- (NSLayoutConstraint *)hol_makeExternalSecondaryEdgeEqualTo:(UIView *)view withDirection:(HOLFlowViewDirection)direction;
+- (NSLayoutConstraint * _Nonnull)hol_makeExternalSecondaryEdgeEqualTo:(UIView * _Nonnull)view withDirection:(HOLFlowViewDirection)direction;
 
-- (NSLayoutConstraint *)hol_makeLeadingEdgeEqualTo:(UIView *)view withDirection:(HOLFlowViewDirection)direction;
+- (NSLayoutConstraint * _Nonnull)hol_makeLeadingEdgeEqualTo:(UIView * _Nonnull)view withDirection:(HOLFlowViewDirection)direction;
 
-- (NSLayoutConstraint *)hol_makeTrailingEdgeEqualTo:(UIView *)view withDirection:(HOLFlowViewDirection)direction;
+- (NSLayoutConstraint * _Nonnull)hol_makeTrailingEdgeEqualTo:(UIView * _Nonnull)view withDirection:(HOLFlowViewDirection)direction;
 
-- (NSLayoutConstraint *)hol_makeLeadingEqualToTrailingOf:(UIView *)view withDirection:(HOLFlowViewDirection)direction;
+- (NSLayoutConstraint * _Nonnull)hol_makeLeadingEqualToTrailingOf:(UIView * _Nonnull)view withDirection:(HOLFlowViewDirection)direction;
 
-- (NSLayoutConstraint *)hol_makeWidthEqualTo:(UIView *)view;
+- (NSLayoutConstraint * _Nonnull)hol_makeWidthEqualTo:(UIView * _Nonnull)view;
 
-- (NSLayoutConstraint *)hol_makeHeightEqualTo:(UIView *)view;
+- (NSLayoutConstraint * _Nonnull)hol_makeHeightEqualTo:(UIView * _Nonnull)view;
 
-- (NSLayoutConstraint *)hol_makeHeightEqualToConstant:(NSNumber *)constant;
+- (NSLayoutConstraint * _Nonnull)hol_makeHeightEqualToConstant:(NSNumber * _Nonnull)constant;
 
-- (NSLayoutConstraint *)hol_makeWidthEqualToConstant:(NSNumber *)constant;
+- (NSLayoutConstraint * _Nonnull)hol_makeWidthEqualToConstant:(NSNumber * _Nonnull)constant;
 
-- (NSLayoutConstraint *)hol_make:(NSLayoutAttribute)attribute equalTo:(UIView *)view;
+- (NSLayoutConstraint * _Nonnull)hol_make:(NSLayoutAttribute)attribute equalTo:(UIView * _Nonnull)view;
+
+- (NSArray * _Nonnull)hol_findHeightConstraints;
+
+- (NSArray * _Nonnull)hol_findWidthConstraints;
 @end
