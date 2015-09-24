@@ -22,19 +22,19 @@ SpecBegin(ContainerInsetsSpec)
 
     describe(@"contentViewInsets property", ^{
 
-        CGSize defaultRootViewSize = CGSizeMake(300, 200);
-        UIView *rootView = createViewFoSize(defaultRootViewSize.width, defaultRootViewSize.height);
-        HOLVerticalFlowView *flowScrollView = createFlowViewOnView(rootView);
-
-        flowScrollView.addView(@200);
-
-        [flowScrollView setNeedsLayout];
-        [flowScrollView layoutIfNeeded];
-
-        UIView *testView = flowScrollView.views.lastObject;
-        UIView *container = flowScrollView.contentView;
-
         it(@"should set margins properly", ^{
+            
+            CGSize defaultRootViewSize = CGSizeMake(300, 200);
+            UIView *rootView = createViewFoSize(defaultRootViewSize.width, defaultRootViewSize.height);
+            HOLVerticalFlowView *flowScrollView = createFlowViewOnView(rootView);
+            
+            flowScrollView.addView(@200);
+            
+            [flowScrollView setNeedsLayout];
+            [flowScrollView layoutIfNeeded];
+            
+            UIView *testView = flowScrollView.views.lastObject;
+            UIView *container = flowScrollView.contentView;
 
             UIEdgeInsets insets = UIEdgeInsetsZero;
 
