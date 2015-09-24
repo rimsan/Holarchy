@@ -1,10 +1,10 @@
 Pod::Spec.new do |s|
   s.name             = "Holarchy"
-  s.version          = "0.0.1"
+  s.version          = "0.0.2"
   s.summary          = "A subclass of UIScrollView that provides painless building of forms etc."
 
   s.description      = %{
-        A subclass of UIScrollView that provides painless building of forms etc.
+        Forget about table/collection views when you need to create custom scrollable layout with custom elements.
 }
 
 
