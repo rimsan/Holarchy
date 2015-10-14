@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "Holarchy"
-  s.version          = "0.0.2"
+  s.version          = "0.0.3"
   s.summary          = "A subclass of UIScrollView that provides painless building of forms etc."
 
   s.description      = %{

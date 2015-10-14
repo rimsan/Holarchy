@@ -121,7 +121,7 @@ static BOOL isObjectIsSubclassOfUIView(id object) {
 - (void)addElementWithNumber:(NSNumber *)element {
 
     UIView *view = [UIView new];
-    view.backgroundColor = [UIColor greenColor];
+    view.backgroundColor = [UIColor clearColor];
 
     [view hol_makeHeightEqualToConstant:element];
 
