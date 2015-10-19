@@ -7,7 +7,7 @@
 
 @implementation UIView (HOLAdditions)
 
-- (NSLayoutConstraint * _Nonnull)hol_makeExternalPrimaryEdgeEqualTo:(UIView * _Nonnull)view withDirection:(HOLFlowViewDirection)direction {
+- (nonnull NSLayoutConstraint *)hol_makeExternalPrimaryEdgeEqualTo:(nonnull UIView *)view withDirection:(HOLFlowViewDirection)direction {
     return [self hol_make:[self attributeForExternalPrimaryEdgeWithDirection:direction]
                   equalTo:view];
 }
@@ -17,7 +17,7 @@
 }
 
 
-- (NSLayoutConstraint * _Nonnull)hol_makeExternalSecondaryEdgeEqualTo:(UIView * _Nonnull)view withDirection:(HOLFlowViewDirection)direction {
+- (nonnull NSLayoutConstraint *)hol_makeExternalSecondaryEdgeEqualTo:(nonnull UIView *)view withDirection:(HOLFlowViewDirection)direction {
     return [self hol_make:[self hol_attributeForExternalSecondaryEdgeWithDirection:direction]
                   equalTo:view];
 }
@@ -27,7 +27,7 @@
 }
 
 
-- (NSLayoutConstraint * _Nonnull)hol_makeLeadingEdgeEqualTo:(UIView * _Nonnull)view withDirection:(HOLFlowViewDirection)direction {
+- (nonnull NSLayoutConstraint *)hol_makeLeadingEdgeEqualTo:(nonnull UIView *)view withDirection:(HOLFlowViewDirection)direction {
     return [self hol_make:[self hol_attributeForLeadingEdgeWithDirection:direction]
                   equalTo:view];
 }
@@ -59,7 +59,7 @@
 }
 
 
-- (NSLayoutConstraint * _Nonnull)hol_makeTrailingEdgeEqualTo:(UIView * _Nonnull)view withDirection:(HOLFlowViewDirection)direction {
+- (nonnull NSLayoutConstraint *)hol_makeTrailingEdgeEqualTo:(nonnull UIView *)view withDirection:(HOLFlowViewDirection)direction {
     return [self hol_make:[self hol_attributeForTrailingEdgeWithDirection:direction]
                   equalTo:view];
 }
@@ -91,8 +91,8 @@
     return attribute;
 }
 
-- (NSLayoutConstraint * _Nonnull)hol_makeLeadingEqualToTrailingOf:(UIView * _Nonnull)view
-                                           withDirection:(HOLFlowViewDirection)direction {
+- (nonnull NSLayoutConstraint *)hol_makeLeadingEqualToTrailingOf:(nonnull UIView *)view
+                                                   withDirection:(HOLFlowViewDirection)direction {
 
     NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:self
                                                                   attribute:[self hol_attributeForLeadingEdgeWithDirection:direction]
@@ -110,15 +110,15 @@
     return direction > HOLFlowViewDirectionLeft;
 }
 
-- (NSLayoutConstraint * _Nonnull)hol_makeWidthEqualTo:(UIView * _Nonnull)view {
+- (nonnull NSLayoutConstraint *)hol_makeWidthEqualTo:(nonnull UIView *)view {
     return [self hol_make:NSLayoutAttributeWidth equalTo:view];
 }
 
-- (NSLayoutConstraint * _Nonnull)hol_makeHeightEqualTo:(UIView * _Nonnull)view {
+- (nonnull NSLayoutConstraint *)hol_makeHeightEqualTo:(nonnull UIView *)view {
     return [self hol_make:NSLayoutAttributeHeight equalTo:view];
 }
 
-- (NSLayoutConstraint * _Nonnull)hol_makeHeightEqualToConstant:(NSNumber * _Nonnull)constant {
+- (nonnull NSLayoutConstraint *)hol_makeHeightEqualToConstant:(nonnull NSNumber *)constant {
     NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:self
                                                                   attribute:NSLayoutAttributeHeight
                                                                   relatedBy:NSLayoutRelationEqual
@@ -131,7 +131,7 @@
 }
 
 
-- (NSLayoutConstraint * _Nonnull)hol_makeWidthEqualToConstant:(NSNumber * _Nonnull)constant {
+- (nonnull NSLayoutConstraint *)hol_makeWidthEqualToConstant:(nonnull NSNumber *)constant {
     NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:self
                                                                   attribute:NSLayoutAttributeWidth
                                                                   relatedBy:NSLayoutRelationEqual
@@ -143,29 +143,29 @@
     return constraint;
 }
 
-- (NSLayoutConstraint * _Nonnull)hol_makeRightEqualTo:(UIView * _Nonnull)view {
+- (nonnull NSLayoutConstraint *)hol_makeRightEqualTo:(nonnull UIView *)view {
     return [self hol_make:NSLayoutAttributeRight equalTo:view];
 }
 
-- (NSLayoutConstraint * _Nonnull)hol_makeLeftEqualTo:(UIView * _Nonnull)view {
+- (nonnull NSLayoutConstraint *)hol_makeLeftEqualTo:(nonnull UIView *)view {
     return [self hol_make:NSLayoutAttributeLeft equalTo:view];
 }
 
-- (NSLayoutConstraint * _Nonnull)hol_makeTopEqualTo:(UIView * _Nonnull)view {
+- (nonnull NSLayoutConstraint *)hol_makeTopEqualTo:(nonnull UIView *)view {
     return [self hol_make:NSLayoutAttributeTop equalTo:view];
 }
 
-- (NSLayoutConstraint * _Nonnull)hol_makeBottomEqualTo:(UIView * _Nonnull)view {
+- (nonnull NSLayoutConstraint *)hol_makeBottomEqualTo:(nonnull UIView *)view {
     return [self hol_make:NSLayoutAttributeBottom equalTo:view];
 }
 
 
-- (NSLayoutConstraint * _Nonnull)hol_make:(NSLayoutAttribute)attribute equalTo:(UIView * _Nonnull)view {
+- (nonnull NSLayoutConstraint *)hol_make:(NSLayoutAttribute)attribute equalTo:(nonnull UIView *)view {
     NSLayoutConstraint *constraint = [self hol_make:attribute equalTo:view withOffset:0];
     return constraint;
 }
 
-- (NSLayoutConstraint * _Nonnull)hol_make:(NSLayoutAttribute)attribute equalTo:(UIView * _Nonnull)view withOffset:(CGFloat)offset {
+- (nonnull NSLayoutConstraint *)hol_make:(NSLayoutAttribute)attribute equalTo:(nonnull UIView *)view withOffset:(CGFloat)offset {
     NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:self
                                                                   attribute:attribute
                                                                   relatedBy:NSLayoutRelationEqual
@@ -182,7 +182,7 @@
     return constraint;
 }
 
-- (instancetype)hol_closestCommonSuperview:(UIView * _Nonnull)view {
+- (nonnull instancetype)hol_closestCommonSuperview:(nonnull UIView *)view {
 
     UIView *closestCommonSuperview = nil;
     UIView *secondViewSuperview = view;
@@ -201,26 +201,26 @@
 }
 
 
-- (NSArray * _Nonnull)hol_findHeightConstraints {
-    
+- (nonnull NSArray *)hol_findHeightConstraints {
+
     return [self hol_findSizeConstraintsWithAttributesEqualTo:NSLayoutAttributeHeight];
 }
 
-- (NSArray * _Nonnull)hol_findWidthConstraints {
-    
+- (nonnull NSArray *)hol_findWidthConstraints {
+
     return [self hol_findSizeConstraintsWithAttributesEqualTo:NSLayoutAttributeWidth];
 }
 
-- (NSArray * _Nonnull)hol_findSizeConstraintsWithAttributesEqualTo:(NSLayoutAttribute)attribute {
-    
+- (nonnull NSArray *)hol_findSizeConstraintsWithAttributesEqualTo:(NSLayoutAttribute)attribute {
+
     NSMutableSet *set = [NSMutableSet new];
-    
-    [self.constraints enumerateObjectsUsingBlock:^(__kindof NSLayoutConstraint * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+
+    [self.constraints enumerateObjectsUsingBlock:^(__kindof NSLayoutConstraint * obj, NSUInteger idx, BOOL * stop) {
         if (attribute == obj.firstAttribute && self == obj.firstItem && nil == obj.secondItem) {
             [set addObject:obj];
         }
     }];
-    
+
     return set.allObjects;
 }
 
