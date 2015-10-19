@@ -25,4 +25,6 @@
 
 - (HOLVerticalFlowView *(^)(CGFloat))withHeight;
 
+- (instancetype)initWithScrollView:(UIScrollView *)scrollView;
+
 @end

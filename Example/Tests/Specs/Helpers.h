@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Holarchy.h"
-#import "Masonry/Masonry.h"
-#import "UIView+HOLFrameHelpers.h"
+#import <Holarchy/Holarchy.h>
+#import <Masonry/Masonry.h>
+#import <Holarchy/UIView+HOLFrameHelpers.h>
 
 static UIView *createViewFoSize(CGFloat width, CGFloat height) {
     UIView *view = [UIView new];
@@ -22,9 +22,9 @@ static UIView *createViewFoSize(CGFloat width, CGFloat height) {
 
 static HOLVerticalFlowView *createFlowViewOnView(UIView *view) {
     HOLVerticalFlowView *flowView = [HOLVerticalFlowView new];
-    [view addSubview:flowView];
+    [view addSubview:flowView.scrollView];
 
-    [flowView mas_makeConstraints:^(MASConstraintMaker *make) {
+    [flowView.scrollView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(view);
     }];
 

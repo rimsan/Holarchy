@@ -9,7 +9,7 @@
 #import "Specta/Specta.h"
 #import "Expecta/Expecta.h"
 #import "Masonry/Masonry.h"
-#import "HOLVerticalFlowView.h"
+#import <Holarchy/Holarchy.h>
 #import "Helpers.h"
 
 
@@ -30,7 +30,7 @@ SpecBegin(LayoutSpec)
             [items enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
                 flowScrollView.addView(obj);
             }];
-            [flowScrollView layoutIfNeeded];
+            [flowScrollView.scrollView layoutIfNeeded];
             return flowScrollView.container.frame.size;
         };
 
@@ -85,7 +85,7 @@ SpecBegin(LayoutSpec)
                     @10,
             ]);
 
-            [flowScrollView layoutIfNeeded];
+            [flowScrollView.scrollView layoutIfNeeded];
             CGSize size = flowScrollView.container.frame.size;
 
             expect(size.height).to.equal(@70);

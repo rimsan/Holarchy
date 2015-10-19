@@ -9,7 +9,7 @@
 #import "Specta/Specta.h"
 #import "Expecta/Expecta.h"
 #import "Masonry/Masonry.h"
-#import "HOLVerticalFlowView.h"
+#import <Holarchy/Holarchy.h>
 #import "Helpers.h"
 
 
@@ -27,12 +27,12 @@ SpecBegin(RPLayoutScrollingSpec)
 
         NSNumber *expectedHeight = @300;
         flowScrollView.addView(expectedHeight);
-        [flowScrollView setNeedsLayout];
-        [flowScrollView layoutIfNeeded];
+        [flowScrollView.scrollView setNeedsLayout];
+        [flowScrollView.scrollView layoutIfNeeded];
 
         it(@"must update it's contentSize to container size", ^{
-            expect(flowScrollView.contentSize.width).to.equal(defaultRootViewSize.width);
-            expect(flowScrollView.contentSize.height).to.equal(expectedHeight);
+            expect(flowScrollView.scrollView.contentSize.width).to.equal(defaultRootViewSize.width);
+            expect(flowScrollView.scrollView.contentSize.height).to.equal(expectedHeight);
         });
 
 

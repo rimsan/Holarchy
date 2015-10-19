@@ -5,7 +5,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HOLFlowView : UIScrollView
+@interface HOLFlowView : NSObject
+
+@property (nonatomic, readonly) UIScrollView *scrollView;
 
 @property (nonatomic, readonly) UIView *contentView;
 

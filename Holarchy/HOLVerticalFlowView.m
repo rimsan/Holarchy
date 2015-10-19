@@ -9,28 +9,35 @@
 
 @implementation HOLVerticalFlowView
 
-- (instancetype)initWithFrame:(CGRect)frame {
-    
+- (instancetype)init {
+
     self = [super initWithDirection:HOLFlowViewDirectionBottom];
     return self;
 }
 
 
+- (instancetype)initWithScrollView:(UIScrollView *)scrollView {
+
+    self = [super initWithScrollView:scrollView direction:HOLFlowViewDirectionBottom];
+    return self;
+}
+
 - (HOLVerticalFlowView *(^)(CGFloat))withLeftMargin {
-    
-    return (HOLVerticalFlowView *(^)(CGFloat))[self withExternalPrimaryEdgeMargin];
+
+    return (HOLVerticalFlowView *(^)(CGFloat)) [self withExternalPrimaryEdgeMargin];
 }
 
 
 - (HOLVerticalFlowView *(^)(CGFloat))withRightMargin {
-    
-    return (HOLVerticalFlowView *(^)(CGFloat))[self withExternalSecondaryEdgeMargin];
+
+    return (HOLVerticalFlowView *(^)(CGFloat)) [self withExternalSecondaryEdgeMargin];
 }
 
 
 - (HOLVerticalFlowView *(^)(CGFloat))withHeight {
-    
-    return (HOLVerticalFlowView *(^)(CGFloat))[self withLastViewSizeConstant];
+
+    return (HOLVerticalFlowView *(^)(CGFloat)) [self withLastViewSizeConstant];
 }
+
 
 @end

@@ -10,7 +10,7 @@
 #import "Specta/Specta.h"
 #import "Expecta/Expecta.h"
 #import "Masonry/Masonry.h"
-#import "HOLVerticalFlowView.h"
+#import <Holarchy/Holarchy.h>
 #import "Helpers.h"
 
 
@@ -30,8 +30,8 @@ SpecBegin(ContainerInsetsSpec)
             
             flowScrollView.addView(@200);
             
-            [flowScrollView setNeedsLayout];
-            [flowScrollView layoutIfNeeded];
+            [flowScrollView.scrollView setNeedsLayout];
+            [flowScrollView.scrollView layoutIfNeeded];
             
             UIView *testView = flowScrollView.views.lastObject;
             UIView *container = flowScrollView.contentView;
@@ -74,7 +74,7 @@ SpecBegin(ContainerInsetsSpec)
             expect(container.f_y).to.equal(insets.top);
             expect(container.f_maxX).to.equal(defaultRootViewSize.width - insets.right);
             expect(container.f_maxY).to.equal(testView.f_height + insets.top);
-            expect(flowScrollView.contentSize.height).to.equal(testView.f_height + insets.top + insets.bottom);
+            expect(flowScrollView.scrollView.contentSize.height).to.equal(testView.f_height + insets.top + insets.bottom);
         });
     });
 

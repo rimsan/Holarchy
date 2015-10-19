@@ -10,7 +10,7 @@
 #import "Specta/Specta.h"
 #import "Expecta/Expecta.h"
 #import "Masonry/Masonry.h"
-#import "HOLVerticalFlowView.h"
+#import <Holarchy/Holarchy.h>
 #import "Helpers.h"
 
 

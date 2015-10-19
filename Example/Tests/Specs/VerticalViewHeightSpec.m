@@ -9,7 +9,7 @@
 #import "Specta/Specta.h"
 #import "Expecta/Expecta.h"
 #import "Masonry/Masonry.h"
-#import "HOLVerticalFlowView.h"
+#import <Holarchy/Holarchy.h>
 #import "Helpers.h"
 
 
@@ -33,8 +33,8 @@ describe(@"HOLVerticalFlowView.withHeight() method", ^{
         CGFloat expectedHeight = 50;
         
         flowScrollView.addView(testView).withHeight(expectedHeight);
-        [flowScrollView setNeedsLayout];
-        [flowScrollView layoutIfNeeded];
+        [flowScrollView.scrollView setNeedsLayout];
+        [flowScrollView.scrollView layoutIfNeeded];
         
         expect(testView.f_height).to.equal(expectedHeight);
     });
@@ -50,14 +50,14 @@ describe(@"HOLVerticalFlowView.withHeight() method", ^{
         
         flowScrollView.addView(testView).withHeight(123);
         
-        [flowScrollView setNeedsLayout];
-        [flowScrollView layoutIfNeeded];
+        [flowScrollView.scrollView setNeedsLayout];
+        [flowScrollView.scrollView layoutIfNeeded];
 
         
         flowScrollView.withHeight(expectedHeight);
         
-        [flowScrollView setNeedsLayout];
-        [flowScrollView layoutIfNeeded];
+        [flowScrollView.scrollView setNeedsLayout];
+        [flowScrollView.scrollView layoutIfNeeded];
         
         expect(testView.f_height).to.equal(expectedHeight);
     });
