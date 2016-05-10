@@ -21,10 +21,10 @@ static UIView *createViewFoSize(CGFloat width, CGFloat height) {
 
 
 static HOLVerticalFlowView *createFlowViewOnView(UIView *view) {
-    HOLVerticalFlowView *flowView = [HOLVerticalFlowView new];
-    [view addSubview:flowView.scrollView];
+    HOLVerticalFlowView *flowView = [[HOLVerticalFlowView alloc] initWithRootView:[UIScrollView new]];
+    [view addSubview:flowView.rootView];
 
-    [flowView.scrollView mas_makeConstraints:^(MASConstraintMaker *make) {
+    [flowView.rootView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(view);
     }];
 

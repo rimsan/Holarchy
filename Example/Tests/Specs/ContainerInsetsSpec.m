@@ -7,9 +7,6 @@
 //
 
 
-#import "Specta/Specta.h"
-#import "Expecta/Expecta.h"
-#import "Masonry/Masonry.h"
 #import <Holarchy/Holarchy.h>
 #import "Helpers.h"
 
@@ -23,16 +20,16 @@ SpecBegin(ContainerInsetsSpec)
     describe(@"contentViewInsets property", ^{
 
         it(@"should set margins properly", ^{
-            
+
             CGSize defaultRootViewSize = CGSizeMake(300, 200);
             UIView *rootView = createViewFoSize(defaultRootViewSize.width, defaultRootViewSize.height);
             HOLVerticalFlowView *flowScrollView = createFlowViewOnView(rootView);
-            
+
             flowScrollView.addView(@200);
-            
-            [flowScrollView.scrollView setNeedsLayout];
-            [flowScrollView.scrollView layoutIfNeeded];
-            
+
+            [flowScrollView.rootView setNeedsLayout];
+            [flowScrollView.rootView layoutIfNeeded];
+
             UIView *testView = flowScrollView.views.lastObject;
             UIView *container = flowScrollView.contentView;
 
@@ -74,7 +71,7 @@ SpecBegin(ContainerInsetsSpec)
             expect(container.f_y).to.equal(insets.top);
             expect(container.f_maxX).to.equal(defaultRootViewSize.width - insets.right);
             expect(container.f_maxY).to.equal(testView.f_height + insets.top);
-            expect(flowScrollView.scrollView.contentSize.height).to.equal(testView.f_height + insets.top + insets.bottom);
+            expect([(UIScrollView *) flowScrollView.rootView contentSize].height).to.equal(testView.f_height + insets.top + insets.bottom);
         });
     });
 

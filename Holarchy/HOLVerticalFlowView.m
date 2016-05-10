@@ -5,22 +5,28 @@
 
 #import "HOLVerticalFlowView.h"
 #import "HOLFlowView+PrivateHeader.h"
-#import "UIView+HOLAdditions.h"
 
 @implementation HOLVerticalFlowView
 
 - (instancetype)init {
 
-    self = [super initWithDirection:HOLFlowViewDirectionBottom];
-    return self;
+    [NSException raise:@"Invalid initializer" format:@"Use -initWithRootView"];
+
+    return nil;
 }
 
 
 - (instancetype)initWithScrollView:(UIScrollView *)scrollView {
 
-    self = [super initWithScrollView:scrollView direction:HOLFlowViewDirectionBottom];
+    return [self initWithRootView:scrollView];
+}
+
+- (instancetype)initWithRootView:(UIView *)rootView {
+
+    self = [super initWithRootView:rootView direction:HOLFlowViewDirectionBottom];
     return self;
 }
+
 
 - (HOLVerticalFlowView *(^)(CGFloat))withLeftMargin {
 

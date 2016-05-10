@@ -6,9 +6,6 @@
 //  Copyright (c) 2015 Roman Petryshen. All rights reserved.
 //
 
-#import "Specta/Specta.h"
-#import "Expecta/Expecta.h"
-#import "Masonry/Masonry.h"
 #import <Holarchy/Holarchy.h>
 #import "Helpers.h"
 
@@ -19,7 +16,7 @@
 
 SpecBegin(RPLayoutScrollingSpec)
 
-    describe(@"Layout's scrollView after adding views", ^{
+    describe(@"Layout's rootView after adding views", ^{
 
         CGSize defaultRootViewSize = CGSizeMake(300, 200);
         UIView *rootView = createViewFoSize(defaultRootViewSize.width, defaultRootViewSize.height);
@@ -27,12 +24,12 @@ SpecBegin(RPLayoutScrollingSpec)
 
         NSNumber *expectedHeight = @300;
         flowScrollView.addView(expectedHeight);
-        [flowScrollView.scrollView setNeedsLayout];
-        [flowScrollView.scrollView layoutIfNeeded];
+        [flowScrollView.rootView setNeedsLayout];
+        [flowScrollView.rootView layoutIfNeeded];
 
         it(@"must update it's contentSize to container size", ^{
-            expect(flowScrollView.scrollView.contentSize.width).to.equal(defaultRootViewSize.width);
-            expect(flowScrollView.scrollView.contentSize.height).to.equal(expectedHeight);
+            expect([(UIScrollView *) flowScrollView.rootView contentSize].width).to.equal(defaultRootViewSize.width);
+            expect([(UIScrollView *) flowScrollView.rootView contentSize].height).to.equal(expectedHeight);
         });
 
 

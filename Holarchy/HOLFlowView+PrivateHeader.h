@@ -19,7 +19,7 @@ typedef NS_ENUM(NSInteger, HOLFlowViewDirection) {
 @interface HOLFlowView ()
 
 @property (nonatomic, assign) HOLFlowViewDirection direction;
-@property (nonatomic, strong) UIScrollView *scrollView;
+@property (nonatomic, strong) UIView *rootView;
 @property (nonatomic, strong) NSArray *views;
 @property (nonatomic, strong) UIView *container;
 @property (nonatomic, readonly) BOOL isVerticalFlow;
@@ -37,9 +37,7 @@ typedef NS_ENUM(NSInteger, HOLFlowViewDirection) {
 
 @property (nonatomic, readonly) UIView *lastAddedView;
 
-- (instancetype)initWithDirection:(HOLFlowViewDirection)direction;
-
-- (instancetype)initWithScrollView:(UIScrollView *)scrollView direction:(HOLFlowViewDirection)direction;
+- (instancetype)initWithRootView:(UIView *)rootView direction:(HOLFlowViewDirection)direction;
 
 - (HOLFlowView *(^)(CGFloat))withExternalPrimaryEdgeMargin;
 

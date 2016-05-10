@@ -25,6 +25,8 @@
 
 - (HOLVerticalFlowView *(^)(CGFloat))withHeight;
 
-- (instancetype)initWithScrollView:(UIScrollView *)scrollView;
+- (instancetype)initWithScrollView:(UIScrollView *)scrollView DEPRECATED_MSG_ATTRIBUTE("use initWithRootView instead.");
+
+- (instancetype)initWithRootView:(UIScrollView *)rootView;
 
 @end

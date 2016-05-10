@@ -1,6 +1,6 @@
 PODS:
   - Expecta (1.0.3)
-  - Holarchy (0.0.1)
+  - Holarchy (0.0.4)
   - Masonry (0.6.3)
   - Specta (1.0.4)
 
@@ -16,8 +16,8 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Expecta: 9d1bff6c8b0eeee73a166a2ee898892478927a15
-  Holarchy: 639e819f16df2fd717930bd37808bcf9d5e8f3da
+  Holarchy: 1cf639dd2354fdb64cc3a06a62cc50fdb080e3b2
   Masonry: ff105a956abcd19a618b2028b121cb638d7a8e2f
   Specta: 69bb134672aae190a1379ff91df07dad8dd1f869
 
-COCOAPODS: 0.38.2
+COCOAPODS: 0.39.0

@@ -15,7 +15,7 @@ static BOOL isObjectIsSubclassOfUIView(id object) {
 @implementation HOLFlowView
 
 
-- (instancetype)initWithScrollView:(UIScrollView *)scrollView direction:(HOLFlowViewDirection)direction {
+- (instancetype)initWithRootView:(UIView *)rootView direction:(HOLFlowViewDirection)direction {
 
     self = [super init];
 
@@ -23,18 +23,10 @@ static BOOL isObjectIsSubclassOfUIView(id object) {
 
         self = [super init];
         self.direction = direction;
-        self.scrollView = scrollView;
+        self.rootView = rootView;
         [self setupView];
     }
 
-    return self;
-}
-
-- (instancetype)initWithDirection:(HOLFlowViewDirection)direction {
-    self = [super init];
-    self.direction = direction;
-    self.scrollView = [UIScrollView new];
-    [self setupView];
     return self;
 }
 
@@ -93,17 +85,17 @@ static BOOL isObjectIsSubclassOfUIView(id object) {
 
 - (void)addContainer:(UIView *)container {
 
-    [self.scrollView addSubview:container];
+    [self.rootView addSubview:container];
 
-    self.containerConstraintLeft = [container hol_make:NSLayoutAttributeLeading equalTo:self.scrollView];
-    self.containerConstraintRight = [container hol_make:NSLayoutAttributeTrailing equalTo:self.scrollView];
-    self.containerConstraintTop = [container hol_make:NSLayoutAttributeTop equalTo:self.scrollView];
-    self.containerConstraintBottom = [container hol_make:NSLayoutAttributeBottom equalTo:self.scrollView];
+    self.containerConstraintLeft = [container hol_make:NSLayoutAttributeLeading equalTo:self.rootView];
+    self.containerConstraintRight = [container hol_make:NSLayoutAttributeTrailing equalTo:self.rootView];
+    self.containerConstraintTop = [container hol_make:NSLayoutAttributeTop equalTo:self.rootView];
+    self.containerConstraintBottom = [container hol_make:NSLayoutAttributeBottom equalTo:self.rootView];
 
     [self ifV:^{
-        self.containerConstraintWidth = [container hol_makeWidthEqualTo:self.scrollView];
+        self.containerConstraintWidth = [container hol_makeWidthEqualTo:self.rootView];
     }     ifH:^{
-        self.containerConstraintHeight = [container hol_makeHeightEqualTo:self.scrollView];
+        self.containerConstraintHeight = [container hol_makeHeightEqualTo:self.rootView];
     }];
 }
 
@@ -211,8 +203,8 @@ static BOOL isObjectIsSubclassOfUIView(id object) {
     return ^id(CGFloat margin) {
 
         self.lastExternalPrimaryEdgeConstraint.constant = margin;
-        [self.scrollView invalidateIntrinsicContentSize];
-        [self.scrollView setNeedsLayout];
+        [self.rootView invalidateIntrinsicContentSize];
+        [self.rootView setNeedsLayout];
         return self;
     };
 }
@@ -222,8 +214,8 @@ static BOOL isObjectIsSubclassOfUIView(id object) {
     return ^id(CGFloat margin) {
 
         self.lastExternalSecondaryEdgeConstraint.constant = -1 * margin;
-        [self.scrollView invalidateIntrinsicContentSize];
-        [self.scrollView setNeedsLayout];
+        [self.rootView invalidateIntrinsicContentSize];
+        [self.rootView setNeedsLayout];
         return self;
     };
 }
@@ -260,8 +252,8 @@ static BOOL isObjectIsSubclassOfUIView(id object) {
               self.containerConstraintHeight.constant = -1 * (ABS(contentViewInsets.top) + ABS(contentViewInsets.bottom));
           }];
 
-    [self.scrollView setNeedsLayout];
-    [self.scrollView layoutIfNeeded];
+    [self.rootView setNeedsLayout];
+    [self.rootView layoutIfNeeded];
 }
 
 
@@ -297,8 +289,8 @@ static BOOL isObjectIsSubclassOfUIView(id object) {
             [self.lastAddedView hol_makeWidthEqualToConstant:@(ABS(height))];
         }];
 
-        [self.scrollView invalidateIntrinsicContentSize];
-        [self.scrollView setNeedsLayout];
+        [self.rootView invalidateIntrinsicContentSize];
+        [self.rootView setNeedsLayout];
 
         return self;
     };

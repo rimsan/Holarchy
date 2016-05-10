@@ -33,8 +33,8 @@ describe(@"HOLVerticalFlowView.withHeight() method", ^{
         CGFloat expectedHeight = 50;
         
         flowScrollView.addView(testView).withHeight(expectedHeight);
-        [flowScrollView.scrollView setNeedsLayout];
-        [flowScrollView.scrollView layoutIfNeeded];
+        [flowScrollView.rootView setNeedsLayout];
+        [flowScrollView.rootView layoutIfNeeded];
         
         expect(testView.f_height).to.equal(expectedHeight);
     });
@@ -50,14 +50,14 @@ describe(@"HOLVerticalFlowView.withHeight() method", ^{
         
         flowScrollView.addView(testView).withHeight(123);
         
-        [flowScrollView.scrollView setNeedsLayout];
-        [flowScrollView.scrollView layoutIfNeeded];
+        [flowScrollView.rootView setNeedsLayout];
+        [flowScrollView.rootView layoutIfNeeded];
 
         
         flowScrollView.withHeight(expectedHeight);
         
-        [flowScrollView.scrollView setNeedsLayout];
-        [flowScrollView.scrollView layoutIfNeeded];
+        [flowScrollView.rootView setNeedsLayout];
+        [flowScrollView.rootView layoutIfNeeded];
         
         expect(testView.f_height).to.equal(expectedHeight);
     });

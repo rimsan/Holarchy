@@ -7,7 +7,7 @@
 
 @interface HOLFlowView : NSObject
 
-@property (nonatomic, readonly) UIScrollView *scrollView;
+@property (nonatomic, readonly) UIView *rootView;
 
 @property (nonatomic, readonly) UIView *contentView;
 

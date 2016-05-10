@@ -37,7 +37,7 @@ Create FlowView and add it to your controller:
 ```objc
 self.flowScrollView = [HOLVerticalFlowView new];
 
-[self.flowScrollView.scrollView mas_makeConstraints:^(MASConstraintMaker *make) {
+[self.flowScrollView.rootView mas_makeConstraints:^(MASConstraintMaker *make) {
   make.edges.equalTo(self.view);
 }];
 ```

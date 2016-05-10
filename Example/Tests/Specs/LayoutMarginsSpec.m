@@ -31,7 +31,7 @@ SpecBegin(RPLayoutMarginsSpec)
             int margin = 50;
 
             flowScrollView.addView(@100).withLeftMargin(margin);
-            [flowScrollView.scrollView layoutIfNeeded];
+            [flowScrollView.rootView layoutIfNeeded];
             CGRect frame = [(UIView *) flowScrollView.views.lastObject frame];
 
             expect(frame.size.height).to.equal(100);
@@ -40,19 +40,19 @@ SpecBegin(RPLayoutMarginsSpec)
 
 
             flowScrollView.withLeftMargin(0);
-            [flowScrollView.scrollView layoutIfNeeded];
+            [flowScrollView.rootView layoutIfNeeded];
             frame = [(UIView *) flowScrollView.views.lastObject frame];
             expect(frame.size.width).to.equal(defaultRootViewSize.width);
             expect(frame.origin.x).to.equal(0);
 
             flowScrollView.withRightMargin(margin);
-            [flowScrollView.scrollView layoutIfNeeded];
+            [flowScrollView.rootView layoutIfNeeded];
             frame = [(UIView *) flowScrollView.views.lastObject frame];
             expect(frame.size.width).to.equal(defaultRootViewSize.width - margin);
             expect(frame.origin.x).to.equal(0);
 
             flowScrollView.withLeftMargin(margin);
-            [flowScrollView.scrollView layoutIfNeeded];
+            [flowScrollView.rootView layoutIfNeeded];
             frame = [(UIView *) flowScrollView.views.lastObject frame];
             expect(frame.size.width).to.equal(defaultRootViewSize.width - margin - margin);
             expect(frame.origin.x).to.equal(margin);

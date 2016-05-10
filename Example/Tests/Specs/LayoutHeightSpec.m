@@ -30,7 +30,7 @@ SpecBegin(LayoutSpec)
             [items enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
                 flowScrollView.addView(obj);
             }];
-            [flowScrollView.scrollView layoutIfNeeded];
+            [flowScrollView.rootView layoutIfNeeded];
             return flowScrollView.container.frame.size;
         };
 
@@ -85,7 +85,7 @@ SpecBegin(LayoutSpec)
                     @10,
             ]);
 
-            [flowScrollView.scrollView layoutIfNeeded];
+            [flowScrollView.rootView layoutIfNeeded];
             CGSize size = flowScrollView.container.frame.size;
 
             expect(size.height).to.equal(@70);
