@@ -38,3 +38,14 @@ static UIView *viewWithHeight(NSNumber *height) {
     }];
     return item;
 };
+
+static HOLVerticalFlowView *createFlowViewWithUIViewOnView(UIView *view) {
+    HOLVerticalFlowView *flowView = [[HOLVerticalFlowView alloc] initWithRootView:[UIView new]];
+    [view addSubview:flowView.rootView];
+
+    [flowView.rootView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(view);
+    }];
+
+    return flowView;
+};

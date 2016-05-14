@@ -92,11 +92,14 @@ static BOOL isObjectIsSubclassOfUIView(id object) {
     self.containerConstraintTop = [container hol_make:NSLayoutAttributeTop equalTo:self.rootView];
     self.containerConstraintBottom = [container hol_make:NSLayoutAttributeBottom equalTo:self.rootView];
 
-    [self ifV:^{
-        self.containerConstraintWidth = [container hol_makeWidthEqualTo:self.rootView];
-    }     ifH:^{
-        self.containerConstraintHeight = [container hol_makeHeightEqualTo:self.rootView];
-    }];
+    if ([self.rootView isKindOfClass:[UIScrollView class]]) {
+
+        [self ifV:^{
+            self.containerConstraintWidth = [container hol_makeWidthEqualTo:self.rootView];
+        }     ifH:^{
+            self.containerConstraintHeight = [container hol_makeHeightEqualTo:self.rootView];
+        }];
+    }
 }
 
 
@@ -244,13 +247,15 @@ static BOOL isObjectIsSubclassOfUIView(id object) {
     self.containerConstraintBottom.constant = -1 * ABS(contentViewInsets.bottom);
     self.containerConstraintLeft.constant = ABS(contentViewInsets.left);
 
+    if ([self.rootView isKindOfClass:[UIScrollView class]]) {
 
-    [self ifV:^{
-                self.containerConstraintWidth.constant = -1 * (ABS(contentViewInsets.right) + ABS(contentViewInsets.left));
-            }
-          ifH:^{
-              self.containerConstraintHeight.constant = -1 * (ABS(contentViewInsets.top) + ABS(contentViewInsets.bottom));
-          }];
+        [self ifV:^{
+                    self.containerConstraintWidth.constant = -1 * (ABS(contentViewInsets.right) + ABS(contentViewInsets.left));
+                }
+              ifH:^{
+                  self.containerConstraintHeight.constant = -1 * (ABS(contentViewInsets.top) + ABS(contentViewInsets.bottom));
+              }];
+    }
 
     [self.rootView setNeedsLayout];
     [self.rootView layoutIfNeeded];
