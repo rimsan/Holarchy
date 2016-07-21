@@ -15,7 +15,7 @@ static BOOL isObjectIsSubclassOfUIView(id object) {
 @implementation HOLFlowBuilder
 
 
-- (instancetype)initWithRootView:(UIView *)rootView direction:(HOLFlowViewDirection)direction {
+- (instancetype)initWithRootView:(UIView *)rootView direction:(HOLFlowDirection)direction {
 
     self = [super init];
 
@@ -72,7 +72,7 @@ static BOOL isObjectIsSubclassOfUIView(id object) {
 #pragma mark Implementation
 
 - (BOOL)isVerticalFlow {
-    return self.direction > HOLFlowViewDirectionLeft;
+    return self.direction > HOLFlowDirectionLeft;
 }
 
 - (void)setupView {

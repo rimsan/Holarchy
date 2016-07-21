@@ -23,7 +23,7 @@
 
 - (instancetype)initWithRootView:(UIView *)rootView {
 
-    self = [super initWithRootView:rootView direction:HOLFlowViewDirectionBottom];
+    self = [super initWithRootView:rootView direction:HOLFlowDirectionBottom];
     return self;
 }
 

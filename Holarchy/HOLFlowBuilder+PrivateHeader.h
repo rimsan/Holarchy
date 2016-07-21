@@ -7,18 +7,18 @@
 #import "HOLFlowBuilder.h"
 
 
-typedef NS_ENUM(NSInteger, HOLFlowViewDirection) {
-    HOLFlowViewDirectionNone,
-    HOLFlowViewDirectionRight,
-    HOLFlowViewDirectionLeft,
-    HOLFlowViewDirectionTop,
-    HOLFlowViewDirectionBottom,
+typedef NS_ENUM(NSInteger, HOLFlowDirection) {
+    HOLFlowDirectionNone,
+    HOLFlowDirectionRight,
+    HOLFlowDirectionLeft,
+    HOLFlowDirectionTop,
+    HOLFlowDirectionBottom,
 };
 
 
 @interface HOLFlowBuilder ()
 
-@property (nonatomic, assign) HOLFlowViewDirection direction;
+@property (nonatomic, assign) HOLFlowDirection direction;
 @property (nonatomic, strong) UIView *rootView;
 @property (nonatomic, strong) NSArray *views;
 @property (nonatomic, strong) UIView *container;
@@ -37,7 +37,7 @@ typedef NS_ENUM(NSInteger, HOLFlowViewDirection) {
 
 @property (nonatomic, readonly) UIView *lastAddedView;
 
-- (instancetype)initWithRootView:(UIView *)rootView direction:(HOLFlowViewDirection)direction;
+- (instancetype)initWithRootView:(UIView *)rootView direction:(HOLFlowDirection)direction;
 
 - (HOLFlowBuilder *(^)(CGFloat))withExternalPrimaryEdgeMargin;
 

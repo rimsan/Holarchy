@@ -7,48 +7,48 @@
 
 @implementation UIView (HOLAdditions)
 
-- (nonnull NSLayoutConstraint *)hol_makeExternalPrimaryEdgeEqualTo:(nonnull UIView *)view withDirection:(HOLFlowViewDirection)direction {
+- (nonnull NSLayoutConstraint *)hol_makeExternalPrimaryEdgeEqualTo:(nonnull UIView *)view withDirection:(HOLFlowDirection)direction {
     return [self hol_make:[self attributeForExternalPrimaryEdgeWithDirection:direction]
                   equalTo:view];
 }
 
-- (NSLayoutAttribute)attributeForExternalPrimaryEdgeWithDirection:(HOLFlowViewDirection)direction {
+- (NSLayoutAttribute)attributeForExternalPrimaryEdgeWithDirection:(HOLFlowDirection)direction {
     return [self hol_isVertical:direction] ? NSLayoutAttributeLeft : NSLayoutAttributeTop;
 }
 
 
-- (nonnull NSLayoutConstraint *)hol_makeExternalSecondaryEdgeEqualTo:(nonnull UIView *)view withDirection:(HOLFlowViewDirection)direction {
+- (nonnull NSLayoutConstraint *)hol_makeExternalSecondaryEdgeEqualTo:(nonnull UIView *)view withDirection:(HOLFlowDirection)direction {
     return [self hol_make:[self hol_attributeForExternalSecondaryEdgeWithDirection:direction]
                   equalTo:view];
 }
 
-- (NSLayoutAttribute)hol_attributeForExternalSecondaryEdgeWithDirection:(HOLFlowViewDirection)direction {
+- (NSLayoutAttribute)hol_attributeForExternalSecondaryEdgeWithDirection:(HOLFlowDirection)direction {
     return [self hol_isVertical:direction] ? NSLayoutAttributeRight : NSLayoutAttributeBottom;
 }
 
 
-- (nonnull NSLayoutConstraint *)hol_makeLeadingEdgeEqualTo:(nonnull UIView *)view withDirection:(HOLFlowViewDirection)direction {
+- (nonnull NSLayoutConstraint *)hol_makeLeadingEdgeEqualTo:(nonnull UIView *)view withDirection:(HOLFlowDirection)direction {
     return [self hol_make:[self hol_attributeForLeadingEdgeWithDirection:direction]
                   equalTo:view];
 }
 
-- (NSLayoutAttribute)hol_attributeForLeadingEdgeWithDirection:(HOLFlowViewDirection)direction {
+- (NSLayoutAttribute)hol_attributeForLeadingEdgeWithDirection:(HOLFlowDirection)direction {
     NSLayoutAttribute attribute = NSLayoutAttributeNotAnAttribute;
 
     switch (direction) {
 
-        case HOLFlowViewDirectionNone:
+        case HOLFlowDirectionNone:
             break;
-        case HOLFlowViewDirectionRight:
+        case HOLFlowDirectionRight:
             attribute = NSLayoutAttributeLeft;
             break;
-        case HOLFlowViewDirectionLeft:
+        case HOLFlowDirectionLeft:
             attribute = NSLayoutAttributeRight;
             break;
-        case HOLFlowViewDirectionTop:
+        case HOLFlowDirectionTop:
             attribute = NSLayoutAttributeBottom;
             break;
-        case HOLFlowViewDirectionBottom:
+        case HOLFlowDirectionBottom:
             attribute = NSLayoutAttributeTop;
             break;
     }
@@ -59,28 +59,28 @@
 }
 
 
-- (nonnull NSLayoutConstraint *)hol_makeTrailingEdgeEqualTo:(nonnull UIView *)view withDirection:(HOLFlowViewDirection)direction {
+- (nonnull NSLayoutConstraint *)hol_makeTrailingEdgeEqualTo:(nonnull UIView *)view withDirection:(HOLFlowDirection)direction {
     return [self hol_make:[self hol_attributeForTrailingEdgeWithDirection:direction]
                   equalTo:view];
 }
 
-- (NSLayoutAttribute)hol_attributeForTrailingEdgeWithDirection:(HOLFlowViewDirection)direction {
+- (NSLayoutAttribute)hol_attributeForTrailingEdgeWithDirection:(HOLFlowDirection)direction {
     NSLayoutAttribute attribute = NSLayoutAttributeNotAnAttribute;
 
     switch (direction) {
 
-        case HOLFlowViewDirectionNone:
+        case HOLFlowDirectionNone:
             break;
-        case HOLFlowViewDirectionRight:
+        case HOLFlowDirectionRight:
             attribute = NSLayoutAttributeRight;
             break;
-        case HOLFlowViewDirectionLeft:
+        case HOLFlowDirectionLeft:
             attribute = NSLayoutAttributeLeft;
             break;
-        case HOLFlowViewDirectionTop:
+        case HOLFlowDirectionTop:
             attribute = NSLayoutAttributeTop;
             break;
-        case HOLFlowViewDirectionBottom:
+        case HOLFlowDirectionBottom:
             attribute = NSLayoutAttributeBottom;
             break;
     }
@@ -92,7 +92,7 @@
 }
 
 - (nonnull NSLayoutConstraint *)hol_makeLeadingEqualToTrailingOf:(nonnull UIView *)view
-                                                   withDirection:(HOLFlowViewDirection)direction {
+                                                   withDirection:(HOLFlowDirection)direction {
 
     NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:self
                                                                   attribute:[self hol_attributeForLeadingEdgeWithDirection:direction]
@@ -106,8 +106,8 @@
 }
 
 
-- (BOOL)hol_isVertical:(HOLFlowViewDirection)direction {
-    return direction > HOLFlowViewDirectionLeft;
+- (BOOL)hol_isVertical:(HOLFlowDirection)direction {
+    return direction > HOLFlowDirectionLeft;
 }
 
 - (nonnull NSLayoutConstraint *)hol_makeWidthEqualTo:(nonnull UIView *)view {

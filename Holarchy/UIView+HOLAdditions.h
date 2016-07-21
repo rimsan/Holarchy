@@ -7,15 +7,15 @@
 #import "HOLFlowBuilder+PrivateHeader.h"
 
 @interface UIView (HOLAdditions)
-- (nonnull NSLayoutConstraint *)hol_makeExternalPrimaryEdgeEqualTo:(nonnull UIView *)view withDirection:(HOLFlowViewDirection)direction;
+- (nonnull NSLayoutConstraint *)hol_makeExternalPrimaryEdgeEqualTo:(nonnull UIView *)view withDirection:(HOLFlowDirection)direction;
 
-- (nonnull NSLayoutConstraint *)hol_makeExternalSecondaryEdgeEqualTo:(nonnull UIView *)view withDirection:(HOLFlowViewDirection)direction;
+- (nonnull NSLayoutConstraint *)hol_makeExternalSecondaryEdgeEqualTo:(nonnull UIView *)view withDirection:(HOLFlowDirection)direction;
 
-- (nonnull NSLayoutConstraint *)hol_makeLeadingEdgeEqualTo:(nonnull UIView *)view withDirection:(HOLFlowViewDirection)direction;
+- (nonnull NSLayoutConstraint *)hol_makeLeadingEdgeEqualTo:(nonnull UIView *)view withDirection:(HOLFlowDirection)direction;
 
-- (nonnull NSLayoutConstraint *)hol_makeTrailingEdgeEqualTo:(nonnull UIView *)view withDirection:(HOLFlowViewDirection)direction;
+- (nonnull NSLayoutConstraint *)hol_makeTrailingEdgeEqualTo:(nonnull UIView *)view withDirection:(HOLFlowDirection)direction;
 
-- (nonnull NSLayoutConstraint *)hol_makeLeadingEqualToTrailingOf:(nonnull UIView *)view withDirection:(HOLFlowViewDirection)direction;
+- (nonnull NSLayoutConstraint *)hol_makeLeadingEqualToTrailingOf:(nonnull UIView *)view withDirection:(HOLFlowDirection)direction;
 
 - (nonnull NSLayoutConstraint *)hol_makeWidthEqualTo:(nonnull UIView *)view;
 
