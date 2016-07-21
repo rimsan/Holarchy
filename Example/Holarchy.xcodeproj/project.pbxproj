@@ -7,13 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3490DE9B1BB4381F0073CFC1 /* VerticalViewHeightSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 3490DE9A1BB4381F0073CFC1 /* VerticalViewHeightSpec.m */; settings = {ASSET_TAGS = (); }; };
+		3490DE9B1BB4381F0073CFC1 /* VerticalViewHeightSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 3490DE9A1BB4381F0073CFC1 /* VerticalViewHeightSpec.m */; };
 		34C792D61BA6ECF700A68B66 /* ContainerInsetsSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C792D01BA6ECF700A68B66 /* ContainerInsetsSpec.m */; };
 		34C792D71BA6ECF700A68B66 /* LayoutCustomizeSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C792D21BA6ECF700A68B66 /* LayoutCustomizeSpec.m */; };
 		34C792D81BA6ECF700A68B66 /* LayoutHeightSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C792D31BA6ECF700A68B66 /* LayoutHeightSpec.m */; };
 		34C792D91BA6ECF700A68B66 /* LayoutMarginsSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C792D41BA6ECF700A68B66 /* LayoutMarginsSpec.m */; };
 		34C792DA1BA6ECF700A68B66 /* LayoutScrollingSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C792D51BA6ECF700A68B66 /* LayoutScrollingSpec.m */; };
 		43EEE776E4BC97BA21D04456 /* RootUIViewSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 43EEE6FD42A687F5690D5379 /* RootUIViewSpec.m */; };
+		55D2D8690EBA98C8E0E69C31 /* Pods_Holarchy_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45CC8920533D55836C94BC5B /* Pods_Holarchy_Tests.framework */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
@@ -26,9 +27,8 @@
 		6003F5B1195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
-		70884F723B885689A9BBD0D1 /* Pods_Holarchy_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFBC1E15C2512CD4E43202DA /* Pods_Holarchy_Tests.framework */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
-		C845E760CCADE8345B848A11 /* Pods_Holarchy_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE0BD212E62CBB4FFDA67134 /* Pods_Holarchy_Example.framework */; };
+		A4A99E9B6326E5F0CD297691 /* Pods_Holarchy_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92AD3B132D58C98A250ADC3B /* Pods_Holarchy_Example.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,8 +42,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		09FE7AE5D7D19F27DFB08F84 /* Pods-Holarchy_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Holarchy_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Holarchy_Tests/Pods-Holarchy_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		22FB53B565B6C1528C6F70E7 /* Pods-Holarchy_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Holarchy_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Holarchy_Example/Pods-Holarchy_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		169E96699458BCE172C35811 /* Pods-Holarchy_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Holarchy_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Holarchy_Tests/Pods-Holarchy_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		19482EA0C0E361A87ED391EF /* Pods-Holarchy_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Holarchy_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Holarchy_Tests/Pods-Holarchy_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		3490DE9A1BB4381F0073CFC1 /* VerticalViewHeightSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VerticalViewHeightSpec.m; path = Specs/VerticalViewHeightSpec.m; sourceTree = "<group>"; };
 		34C792D01BA6ECF700A68B66 /* ContainerInsetsSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ContainerInsetsSpec.m; path = Specs/ContainerInsetsSpec.m; sourceTree = "<group>"; };
 		34C792D11BA6ECF700A68B66 /* Helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Helpers.h; path = Specs/Helpers.h; sourceTree = "<group>"; };
@@ -52,6 +52,7 @@
 		34C792D41BA6ECF700A68B66 /* LayoutMarginsSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LayoutMarginsSpec.m; path = Specs/LayoutMarginsSpec.m; sourceTree = "<group>"; };
 		34C792D51BA6ECF700A68B66 /* LayoutScrollingSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LayoutScrollingSpec.m; path = Specs/LayoutScrollingSpec.m; sourceTree = "<group>"; };
 		43EEE6FD42A687F5690D5379 /* RootUIViewSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootUIViewSpec.m; sourceTree = "<group>"; };
+		45CC8920533D55836C94BC5B /* Pods_Holarchy_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Holarchy_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58A195388D20070C39A /* Holarchy_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Holarchy_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6003F58F195388D20070C39A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -72,12 +73,11 @@
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		9196ACAC21CCDF869D26E10E /* Holarchy.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Holarchy.podspec; path = ../Holarchy.podspec; sourceTree = "<group>"; };
-		A0282BA9E732AAF727C61E7A /* Pods-Holarchy_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Holarchy_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Holarchy_Tests/Pods-Holarchy_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		CE0BD212E62CBB4FFDA67134 /* Pods_Holarchy_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Holarchy_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		92AD3B132D58C98A250ADC3B /* Pods_Holarchy_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Holarchy_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C317E592A08ADD553EE6053E /* Pods-Holarchy_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Holarchy_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Holarchy_Example/Pods-Holarchy_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		D40D8CD08779B7598C770E9D /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
-		DB60CDCAB82E676BA08567CE /* Pods-Holarchy_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Holarchy_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-Holarchy_Example/Pods-Holarchy_Example.release.xcconfig"; sourceTree = "<group>"; };
 		DB7F2A67214BA52E1B5B53E2 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		DFBC1E15C2512CD4E43202DA /* Pods_Holarchy_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Holarchy_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4C3EF6E7246036E3D7B6C3C /* Pods-Holarchy_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Holarchy_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-Holarchy_Example/Pods-Holarchy_Example.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,7 +88,7 @@
 				6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */,
 				6003F592195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F58E195388D20070C39A /* Foundation.framework in Frameworks */,
-				C845E760CCADE8345B848A11 /* Pods_Holarchy_Example.framework in Frameworks */,
+				A4A99E9B6326E5F0CD297691 /* Pods_Holarchy_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,24 +99,13 @@
 				6003F5B0195388D20070C39A /* XCTest.framework in Frameworks */,
 				6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F5B1195388D20070C39A /* Foundation.framework in Frameworks */,
-				70884F723B885689A9BBD0D1 /* Pods_Holarchy_Tests.framework in Frameworks */,
+				55D2D8690EBA98C8E0E69C31 /* Pods_Holarchy_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		28B2A8E096CA565446399111 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				22FB53B565B6C1528C6F70E7 /* Pods-Holarchy_Example.debug.xcconfig */,
-				DB60CDCAB82E676BA08567CE /* Pods-Holarchy_Example.release.xcconfig */,
-				A0282BA9E732AAF727C61E7A /* Pods-Holarchy_Tests.debug.xcconfig */,
-				09FE7AE5D7D19F27DFB08F84 /* Pods-Holarchy_Tests.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		34C792CF1BA6ECE400A68B66 /* Specs */ = {
 			isa = PBXGroup;
 			children = (
@@ -140,7 +129,7 @@
 				6003F5B5195388D20070C39A /* Tests */,
 				6003F58C195388D20070C39A /* Frameworks */,
 				6003F58B195388D20070C39A /* Products */,
-				28B2A8E096CA565446399111 /* Pods */,
+				DA6A42FFBF79845421CBB07C /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -160,8 +149,8 @@
 				6003F58F195388D20070C39A /* CoreGraphics.framework */,
 				6003F591195388D20070C39A /* UIKit.framework */,
 				6003F5AF195388D20070C39A /* XCTest.framework */,
-				CE0BD212E62CBB4FFDA67134 /* Pods_Holarchy_Example.framework */,
-				DFBC1E15C2512CD4E43202DA /* Pods_Holarchy_Tests.framework */,
+				92AD3B132D58C98A250ADC3B /* Pods_Holarchy_Example.framework */,
+				45CC8920533D55836C94BC5B /* Pods_Holarchy_Tests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -221,6 +210,17 @@
 			name = "Podspec Metadata";
 			sourceTree = "<group>";
 		};
+		DA6A42FFBF79845421CBB07C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C317E592A08ADD553EE6053E /* Pods-Holarchy_Example.debug.xcconfig */,
+				F4C3EF6E7246036E3D7B6C3C /* Pods-Holarchy_Example.release.xcconfig */,
+				19482EA0C0E361A87ED391EF /* Pods-Holarchy_Tests.debug.xcconfig */,
+				169E96699458BCE172C35811 /* Pods-Holarchy_Tests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -228,12 +228,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6003F5BF195388D20070C39A /* Build configuration list for PBXNativeTarget "Holarchy_Example" */;
 			buildPhases = (
-				3870E1312488CA65484777C1 /* Check Pods Manifest.lock */,
+				42C9206FB286E5FA372EB04F /* 📦 Check Pods Manifest.lock */,
 				6003F586195388D20070C39A /* Sources */,
 				6003F587195388D20070C39A /* Frameworks */,
 				6003F588195388D20070C39A /* Resources */,
-				1962CE5F9259C473CF808A12 /* Embed Pods Frameworks */,
-				2ACE4990E46DB9EAD066FB25 /* Copy Pods Resources */,
+				C13F8378B353EC4D4110B475 /* 📦 Embed Pods Frameworks */,
+				1A1653816C93A35DF01401B0 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -248,12 +248,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6003F5C2195388D20070C39A /* Build configuration list for PBXNativeTarget "Holarchy_Tests" */;
 			buildPhases = (
-				FF22B96C545357922B8DC179 /* Check Pods Manifest.lock */,
+				35BA74E1DB740407881882ED /* 📦 Check Pods Manifest.lock */,
 				6003F5AA195388D20070C39A /* Sources */,
 				6003F5AB195388D20070C39A /* Frameworks */,
 				6003F5AC195388D20070C39A /* Resources */,
-				9FF27437792D12257392A334 /* Embed Pods Frameworks */,
-				202321AEE66FC95D7BA9E8A7 /* Copy Pods Resources */,
+				770BC02B3CC99427DE1E554B /* 📦 Embed Pods Frameworks */,
+				BB0C32911A8793C86358063A /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -291,8 +291,6 @@
 			mainGroup = 6003F581195388D10070C39A;
 			productRefGroup = 6003F58B195388D20070C39A /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-			);
 			projectRoot = "";
 			targets = (
 				6003F589195388D20070C39A /* Holarchy_Example */,
@@ -323,44 +321,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1962CE5F9259C473CF808A12 /* Embed Pods Frameworks */ = {
+		1A1653816C93A35DF01401B0 /* 📦 Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Holarchy_Example/Pods-Holarchy_Example-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		202321AEE66FC95D7BA9E8A7 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Holarchy_Tests/Pods-Holarchy_Tests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		2ACE4990E46DB9EAD066FB25 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
+			name = "📦 Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -368,14 +336,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Holarchy_Example/Pods-Holarchy_Example-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		3870E1312488CA65484777C1 /* Check Pods Manifest.lock */ = {
+		35BA74E1DB740407881882ED /* 📦 Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "📦 Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -383,14 +351,29 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		9FF27437792D12257392A334 /* Embed Pods Frameworks */ = {
+		42C9206FB286E5FA372EB04F /* 📦 Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		770BC02B3CC99427DE1E554B /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -398,19 +381,34 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Holarchy_Tests/Pods-Holarchy_Tests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		FF22B96C545357922B8DC179 /* Check Pods Manifest.lock */ = {
+		BB0C32911A8793C86358063A /* 📦 Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "📦 Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Holarchy_Tests/Pods-Holarchy_Tests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C13F8378B353EC4D4110B475 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Holarchy_Example/Pods-Holarchy_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -544,7 +542,7 @@
 		};
 		6003F5C0195388D20070C39A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 22FB53B565B6C1528C6F70E7 /* Pods-Holarchy_Example.debug.xcconfig */;
+			baseConfigurationReference = C317E592A08ADD553EE6053E /* Pods-Holarchy_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -560,7 +558,7 @@
 		};
 		6003F5C1195388D20070C39A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DB60CDCAB82E676BA08567CE /* Pods-Holarchy_Example.release.xcconfig */;
+			baseConfigurationReference = F4C3EF6E7246036E3D7B6C3C /* Pods-Holarchy_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -576,10 +574,10 @@
 		};
 		6003F5C3195388D20070C39A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A0282BA9E732AAF727C61E7A /* Pods-Holarchy_Tests.debug.xcconfig */;
+			baseConfigurationReference = 19482EA0C0E361A87ED391EF /* Pods-Holarchy_Tests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = "";
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Tests/Tests-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -596,10 +594,10 @@
 		};
 		6003F5C4195388D20070C39A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 09FE7AE5D7D19F27DFB08F84 /* Pods-Holarchy_Tests.release.xcconfig */;
+			baseConfigurationReference = 169E96699458BCE172C35811 /* Pods-Holarchy_Tests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = "";
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Tests/Tests-Prefix.pch";
 				INFOPLIST_FILE = "Tests/Tests-Info.plist";

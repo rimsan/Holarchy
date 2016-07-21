@@ -2,12 +2,12 @@ source 'https://github.com/CocoaPods/Specs.git'
 use_frameworks!
 platform :ios, '8.0'
 
-target 'Holarchy_Example', :exclusive => true do
+target 'Holarchy_Example' do
   pod "Holarchy", :path => "../"
   pod 'Masonry'
 end
 
-target 'Holarchy_Tests', :exclusive => true do
+target 'Holarchy_Tests' do
   pod "Holarchy", :path => "../"
 
   pod 'Specta'
