@@ -11,7 +11,7 @@
 #import "Helpers.h"
 
 
-@interface HOLVerticalFlowView (HOLContainerInsetsSpec)
+@interface HOLVerticalFlowBuilder (HOLContainerInsetsSpec)
 @property (nonatomic, strong) NSArray *views;
 @end
 
@@ -23,7 +23,7 @@ SpecBegin(ContainerInsetsSpec)
 
             CGSize defaultRootViewSize = CGSizeMake(300, 200);
             UIView *rootView = createViewFoSize(defaultRootViewSize.width, defaultRootViewSize.height);
-            HOLVerticalFlowView *flowScrollView = createFlowViewOnView(rootView);
+            HOLVerticalFlowBuilder *flowScrollView = createFlowViewOnView(rootView);
 
             flowScrollView.addView(@200);
 

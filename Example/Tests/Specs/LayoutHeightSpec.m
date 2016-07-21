@@ -13,7 +13,7 @@
 #import "Helpers.h"
 
 
-@interface HOLVerticalFlowView (LayoutSpec)
+@interface HOLVerticalFlowBuilder (LayoutSpec)
 @property(nonatomic, strong) NSArray *views;
 @property(nonatomic, strong) UIView *container;
 @end
@@ -26,7 +26,7 @@ SpecBegin(LayoutSpec)
 
         CGSize (^layoutSizeWithViews)(NSArray *) = ^(NSArray *items) {
             UIView *rootView = createViewFoSize(defaultRootViewSize.width, defaultRootViewSize.height);
-            HOLVerticalFlowView *flowScrollView = createFlowViewOnView(rootView);
+            HOLVerticalFlowBuilder *flowScrollView = createFlowViewOnView(rootView);
             [items enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
                 flowScrollView.addView(obj);
             }];
@@ -73,7 +73,7 @@ SpecBegin(LayoutSpec)
 
         it(@"should adopt correct height with views from array", ^{
             UIView *rootView = createViewFoSize(defaultRootViewSize.width, defaultRootViewSize.height);
-            HOLVerticalFlowView *flowScrollView = createFlowViewOnView(rootView);
+            HOLVerticalFlowBuilder *flowScrollView = createFlowViewOnView(rootView);
 
             flowScrollView.addElements(@[
                     @10,

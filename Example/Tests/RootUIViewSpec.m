@@ -11,7 +11,7 @@
 #import "Helpers.h"
 
 
-@interface HOLVerticalFlowView (RootUIViewSpec)
+@interface HOLVerticalFlowBuilder (RootUIViewSpec)
 @property (nonatomic, strong) NSArray *views;
 @end
 

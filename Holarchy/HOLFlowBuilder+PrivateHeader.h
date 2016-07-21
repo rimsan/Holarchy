@@ -4,7 +4,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "HOLFlowView.h"
+#import "HOLFlowBuilder.h"
 
 
 typedef NS_ENUM(NSInteger, HOLFlowViewDirection) {
@@ -16,7 +16,7 @@ typedef NS_ENUM(NSInteger, HOLFlowViewDirection) {
 };
 
 
-@interface HOLFlowView ()
+@interface HOLFlowBuilder ()
 
 @property (nonatomic, assign) HOLFlowViewDirection direction;
 @property (nonatomic, strong) UIView *rootView;
@@ -39,10 +39,10 @@ typedef NS_ENUM(NSInteger, HOLFlowViewDirection) {
 
 - (instancetype)initWithRootView:(UIView *)rootView direction:(HOLFlowViewDirection)direction;
 
-- (HOLFlowView *(^)(CGFloat))withExternalPrimaryEdgeMargin;
+- (HOLFlowBuilder *(^)(CGFloat))withExternalPrimaryEdgeMargin;
 
-- (HOLFlowView *(^)(CGFloat))withExternalSecondaryEdgeMargin;
+- (HOLFlowBuilder *(^)(CGFloat))withExternalSecondaryEdgeMargin;
 
-- (HOLFlowView *(^)(CGFloat))withLastViewSizeConstant;
+- (HOLFlowBuilder *(^)(CGFloat))withLastViewSizeConstant;
 
 @end

@@ -11,9 +11,9 @@
 #import "Masonry/Masonry.h"
 #import <Holarchy/Holarchy.h>
 #import "Helpers.h"
-#import <Holarchy/HOLFlowView+PrivateHeader.h>
+#import <Holarchy/HOLFlowBuilder+PrivateHeader.h>
 
-@interface HOLVerticalFlowView (RPLayoutMarginsSpec)
+@interface HOLVerticalFlowBuilder (RPLayoutMarginsSpec)
 @property(nonatomic, strong) NSArray *views;
 @property(nonatomic, strong) UIView *container;
 @end
@@ -26,7 +26,7 @@ SpecBegin(RPLayoutMarginsSpec)
 
         it(@"should update margin constraint and view size", ^{
             UIView *rootView = createViewFoSize(defaultRootViewSize.width, defaultRootViewSize.height);
-            HOLVerticalFlowView *flowScrollView = createFlowViewOnView(rootView);
+            HOLVerticalFlowBuilder *flowScrollView = createFlowViewOnView(rootView);
 
             int margin = 50;
 

@@ -5,7 +5,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HOLFlowView : NSObject
+@interface HOLFlowBuilder : NSObject
 
 @property (nonatomic, readonly) UIView *rootView;
 

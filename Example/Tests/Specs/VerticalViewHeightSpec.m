@@ -13,13 +13,13 @@
 #import "Helpers.h"
 
 
-@interface HOLVerticalFlowView (VerticalViewHeightSpec)
+@interface HOLVerticalFlowBuilder (VerticalViewHeightSpec)
 @property (nonatomic, strong) NSArray *views;
 @end
 
 SpecBegin(VerticalViewHeightSpec)
 
-describe(@"HOLVerticalFlowView.withHeight() method", ^{
+describe(@"HOLVerticalFlowBuilder.withHeight() method", ^{
     
     
     
@@ -27,7 +27,7 @@ describe(@"HOLVerticalFlowView.withHeight() method", ^{
 
         CGSize defaultRootViewSize = CGSizeMake(300, 200);
         UIView *rootView = createViewFoSize(defaultRootViewSize.width, defaultRootViewSize.height);
-        HOLVerticalFlowView *flowScrollView = createFlowViewOnView(rootView);
+        HOLVerticalFlowBuilder *flowScrollView = createFlowViewOnView(rootView);
         
         UIView *testView = [UIView new];
         CGFloat expectedHeight = 50;
@@ -43,7 +43,7 @@ describe(@"HOLVerticalFlowView.withHeight() method", ^{
         
         CGSize defaultRootViewSize = CGSizeMake(300, 200);
         UIView *rootView = createViewFoSize(defaultRootViewSize.width, defaultRootViewSize.height);
-        HOLVerticalFlowView *flowScrollView = createFlowViewOnView(rootView);
+        HOLVerticalFlowBuilder *flowScrollView = createFlowViewOnView(rootView);
         
         UIView *testView = [UIView new];
         CGFloat expectedHeight = 50;

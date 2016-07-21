@@ -10,7 +10,7 @@
 #import "Helpers.h"
 
 
-@interface HOLVerticalFlowView (RPLayoutScrollingSpec)
+@interface HOLVerticalFlowBuilder (RPLayoutScrollingSpec)
 @property (nonatomic, strong) NSArray *views;
 @end
 
@@ -20,7 +20,7 @@ SpecBegin(RPLayoutScrollingSpec)
 
         CGSize defaultRootViewSize = CGSizeMake(300, 200);
         UIView *rootView = createViewFoSize(defaultRootViewSize.width, defaultRootViewSize.height);
-        HOLVerticalFlowView *flowScrollView = createFlowViewOnView(rootView);
+        HOLVerticalFlowBuilder *flowScrollView = createFlowViewOnView(rootView);
 
         NSNumber *expectedHeight = @300;
         flowScrollView.addView(expectedHeight);

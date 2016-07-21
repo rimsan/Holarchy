@@ -14,7 +14,7 @@
 #import "Helpers.h"
 
 
-@interface HOLVerticalFlowView (LayoutCustomizeSpec)
+@interface HOLVerticalFlowBuilder (LayoutCustomizeSpec)
 @property (nonatomic, strong) NSArray *views;
 @end
 
@@ -24,7 +24,7 @@ SpecBegin(LayoutCustomizeSpec)
 
         CGSize defaultRootViewSize = CGSizeMake(300, 200);
         UIView *rootView = createViewFoSize(defaultRootViewSize.width, defaultRootViewSize.height);
-        HOLVerticalFlowView *flowScrollView = createFlowViewOnView(rootView);
+        HOLVerticalFlowBuilder *flowScrollView = createFlowViewOnView(rootView);
 
         UIColor *color1 = [UIColor redColor];
         UIColor *color3 = [UIColor greenColor];

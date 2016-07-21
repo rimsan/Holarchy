@@ -22,7 +22,7 @@ pod "Holarchy"
 ## Examples
 
 Holarchy solves a problem of bulding long scrollable layouts (like forms) without Autolayout/UITableView/UICollectionView.
-As for now only one class is available - 'HOLVerticalFlowView'. With this class you can build vertical layouts, adding views one by one.
+As for now only one class is available - 'HOLVerticalFlowBuilder'. With this class you can build vertical layouts, adding views one by one.
 
 **Few remarks about how it works**
 * When you add a view to layout - it will be shrinked to the full width of FlowView (like UITableViewCell).
@@ -35,7 +35,7 @@ As for now only one class is available - 'HOLVerticalFlowView'. With this class 
 
 Create FlowView and add it to your controller:
 ```objc
-self.flowScrollView = [HOLVerticalFlowView new];
+self.flowScrollView = [HOLVerticalFlowBuilder new];
 
 [self.flowScrollView.rootView mas_makeConstraints:^(MASConstraintMaker *make) {
   make.edges.equalTo(self.view);

@@ -20,8 +20,8 @@ static UIView *createViewFoSize(CGFloat width, CGFloat height) {
 }
 
 
-static HOLVerticalFlowView *createFlowViewOnView(UIView *view) {
-    HOLVerticalFlowView *flowView = [[HOLVerticalFlowView alloc] initWithRootView:[UIScrollView new]];
+static HOLVerticalFlowBuilder *createFlowViewOnView(UIView *view) {
+    HOLVerticalFlowBuilder *flowView = [[HOLVerticalFlowBuilder alloc] initWithRootView:[UIScrollView new]];
     [view addSubview:flowView.rootView];
 
     [flowView.rootView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -39,8 +39,8 @@ static UIView *viewWithHeight(NSNumber *height) {
     return item;
 };
 
-static HOLVerticalFlowView *createFlowViewWithUIViewOnView(UIView *view) {
-    HOLVerticalFlowView *flowView = [[HOLVerticalFlowView alloc] initWithRootView:[UIView new]];
+static HOLVerticalFlowBuilder *createFlowViewWithUIViewOnView(UIView *view) {
+    HOLVerticalFlowBuilder *flowView = [[HOLVerticalFlowBuilder alloc] initWithRootView:[UIView new]];
     [view addSubview:flowView.rootView];
 
     [flowView.rootView mas_makeConstraints:^(MASConstraintMaker *make) {

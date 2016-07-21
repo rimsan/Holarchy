@@ -4,7 +4,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "HOLFlowView+PrivateHeader.h"
+#import "HOLFlowBuilder+PrivateHeader.h"
 
 @interface UIView (HOLAdditions)
 - (nonnull NSLayoutConstraint *)hol_makeExternalPrimaryEdgeEqualTo:(nonnull UIView *)view withDirection:(HOLFlowViewDirection)direction;

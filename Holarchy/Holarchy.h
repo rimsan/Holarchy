@@ -6,4 +6,4 @@
 //  Copyright (c) 2015 Roman Petryshen. All rights reserved.
 //
 
-#import "HOLVerticalFlowView.h"
+#import "HOLVerticalFlowBuilder.h"

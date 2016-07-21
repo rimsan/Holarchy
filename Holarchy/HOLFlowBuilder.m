@@ -3,8 +3,8 @@
 // Copyright (c) 2015 Roman Petryshen. All rights reserved.
 //
 
-#import "HOLFlowView.h"
-#import "HOLFlowView+PrivateHeader.h"
+#import "HOLFlowBuilder.h"
+#import "HOLFlowBuilder+PrivateHeader.h"
 #import "UIView+HOLAdditions.h"
 #import <objc/runtime.h>
 
@@ -12,7 +12,7 @@ static BOOL isObjectIsSubclassOfUIView(id object) {
     return class_isMetaClass(object_getClass(object)) && [(Class) object isSubclassOfClass:[UIView class]];
 }
 
-@implementation HOLFlowView
+@implementation HOLFlowBuilder
 
 
 - (instancetype)initWithRootView:(UIView *)rootView direction:(HOLFlowViewDirection)direction {
@@ -41,15 +41,15 @@ static BOOL isObjectIsSubclassOfUIView(id object) {
 
 #pragma mark Public methods
 
-- (HOLFlowView *(^)(id))addView {
+- (HOLFlowBuilder *(^)(id))addView {
     return ^id(id o) {
         [self addElement:o];
         return self;
     };
 }
 
-- (HOLFlowView *(^)(NSArray *))addElements {
-    return ^HOLFlowView *(NSArray *elements) {
+- (HOLFlowBuilder *(^)(NSArray *))addElements {
+    return ^HOLFlowBuilder *(NSArray *elements) {
         [elements enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
             [self addElement:obj];
         }];
@@ -58,8 +58,8 @@ static BOOL isObjectIsSubclassOfUIView(id object) {
     };
 }
 
-- (HOLFlowView *(^)(void (^)(UIView *)))customize {
-    return ^HOLFlowView *(void (^customizeBlock)(UIView *lastAddedView)) {
+- (HOLFlowBuilder *(^)(void (^)(UIView *)))customize {
+    return ^HOLFlowBuilder *(void (^customizeBlock)(UIView *lastAddedView)) {
         UIView *lastView = self.views.lastObject;
         if (lastView && customizeBlock) {
             customizeBlock(lastView);
@@ -201,7 +201,7 @@ static BOOL isObjectIsSubclassOfUIView(id object) {
 }
 
 
-- (HOLFlowView *(^)(CGFloat))withExternalPrimaryEdgeMargin {
+- (HOLFlowBuilder *(^)(CGFloat))withExternalPrimaryEdgeMargin {
 
     return ^id(CGFloat margin) {
 
@@ -212,7 +212,7 @@ static BOOL isObjectIsSubclassOfUIView(id object) {
     };
 }
 
-- (HOLFlowView *(^)(CGFloat))withExternalSecondaryEdgeMargin {
+- (HOLFlowBuilder *(^)(CGFloat))withExternalSecondaryEdgeMargin {
 
     return ^id(CGFloat margin) {
 
@@ -267,7 +267,7 @@ static BOOL isObjectIsSubclassOfUIView(id object) {
     return self.views.lastObject;
 }
 
-- (HOLFlowView *(^)(CGFloat))withLastViewSizeConstant {
+- (HOLFlowBuilder *(^)(CGFloat))withLastViewSizeConstant {
 
     return ^id(CGFloat height) {
 
