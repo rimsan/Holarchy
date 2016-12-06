@@ -174,8 +174,6 @@ static BOOL isObjectIsSubclassOfUIView(id object) {
                                                       withDirection:self.direction];
 
 
-    [self.container layoutIfNeeded];
-
     self.views = [self.views arrayByAddingObject:view];
 }
 
@@ -201,7 +199,6 @@ static BOOL isObjectIsSubclassOfUIView(id object) {
     self.lastTrailingConstraint = [view hol_makeTrailingEdgeEqualTo:self.container
                                                       withDirection:self.direction];
 
-    [self.container setNeedsLayout];
     self.views = [self.views arrayByAddingObject:view];
 }
 
