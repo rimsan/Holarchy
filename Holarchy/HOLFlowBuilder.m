@@ -33,8 +33,7 @@ static BOOL isObjectIsSubclassOfUIView(id object) {
 - (void)ifV:(void (^)())vertical ifH:(void (^)())horizontal {
     if (self.isVerticalFlow) {
         vertical();
-    }
-    else {
+    } else {
         horizontal();
     }
 }
@@ -114,11 +113,9 @@ static BOOL isObjectIsSubclassOfUIView(id object) {
 
     if ([element isKindOfClass:[NSNumber class]]) {
         [self addElementWithNumber:element];
-    }
-    else if ([element isKindOfClass:[UIView class]]) {
+    } else if ([element isKindOfClass:[UIView class]]) {
         [self addElementWithView:element];
-    }
-    else if (isObjectIsSubclassOfUIView(element)) {
+    } else if (isObjectIsSubclassOfUIView(element)) {
         [self addElementWithClass:element];
     }
 }
@@ -146,8 +143,7 @@ static BOOL isObjectIsSubclassOfUIView(id object) {
 
     if (0 == self.views.count) {
         [self addFirstElementWithView:element];
-    }
-    else {
+    } else {
         [self addNextElementWithView:element];
     }
 }
@@ -162,14 +158,12 @@ static BOOL isObjectIsSubclassOfUIView(id object) {
     self.lastExternalSecondaryEdgeConstraint = [view hol_makeExternalSecondaryEdgeEqualTo:self.container
                                                                             withDirection:self.direction];
 
-    [view hol_makeLeadingEdgeEqualTo:self.container
-                       withDirection:self.direction];
+    self.lastLeadingConstraint = [view hol_makeLeadingEdgeEqualTo:self.container
+                                                    withDirection:self.direction];
 
     self.lastTrailingConstraint = [view hol_makeTrailingEdgeEqualTo:self.container
                                                       withDirection:self.direction];
 
-
-    [self.container layoutIfNeeded];
 
     self.views = [self.views arrayByAddingObject:view];
 }
@@ -190,39 +184,65 @@ static BOOL isObjectIsSubclassOfUIView(id object) {
     self.lastExternalSecondaryEdgeConstraint = [view hol_makeExternalSecondaryEdgeEqualTo:self.container
                                                                             withDirection:self.direction];
 
-    [view hol_makeLeadingEqualToTrailingOf:previousView
-                             withDirection:self.direction];
+    self.lastLeadingConstraint = [view hol_makeLeadingEqualToTrailingOf:previousView
+                                                          withDirection:self.direction];
 
     self.lastTrailingConstraint = [view hol_makeTrailingEdgeEqualTo:self.container
                                                       withDirection:self.direction];
 
-    [self.container setNeedsLayout];
     self.views = [self.views arrayByAddingObject:view];
 }
 
 
+#pragma mark - Subviews insets management
+
 - (HOLFlowBuilder *(^)(CGFloat))withExternalPrimaryEdgeMargin {
 
-    return ^id(CGFloat margin) {
-
-        self.lastExternalPrimaryEdgeConstraint.constant = margin;
-        [self.rootView invalidateIntrinsicContentSize];
-        [self.rootView setNeedsLayout];
-        return self;
-    };
+    return [self getBlockForUpdatingConstraintConstant:self.lastExternalPrimaryEdgeConstraint sign:1];
 }
 
 - (HOLFlowBuilder *(^)(CGFloat))withExternalSecondaryEdgeMargin {
 
+    return [self getBlockForUpdatingConstraintConstant:self.lastExternalSecondaryEdgeConstraint sign:-1];
+}
+
+- (HOLFlowBuilder *(^)(CGFloat))withLeadingEdgeMargin {
+
+    return [self getBlockForUpdatingConstraintConstant:self.lastLeadingConstraint sign:1];
+}
+
+- (HOLFlowBuilder *(^)(CGFloat))withTrailingEdgeMargin {
+
+    return [self getBlockForUpdatingConstraintConstant:self.lastTrailingConstraint sign:-1];
+}
+
+- (id (^)(CGFloat))getBlockForUpdatingConstraintConstant:(NSLayoutConstraint *)constraint sign:(NSInteger)sign {
+
     return ^id(CGFloat margin) {
 
-        self.lastExternalSecondaryEdgeConstraint.constant = -1 * margin;
+        constraint.constant = sign * margin;
         [self.rootView invalidateIntrinsicContentSize];
         [self.rootView setNeedsLayout];
         return self;
     };
 }
 
+- (HOLFlowBuilder *(^)(CGFloat, CGFloat, CGFloat, CGFloat))withPrimarySecondaryLeadingTrailingMargins {
+
+    return ^id(CGFloat p, CGFloat s, CGFloat l, CGFloat t) {
+
+        self.lastExternalPrimaryEdgeConstraint.constant = p;
+        self.lastExternalSecondaryEdgeConstraint.constant = -1 * s;
+        self.lastLeadingConstraint.constant = l;
+        self.lastTrailingConstraint.constant = -1 * t;
+
+        [self.rootView invalidateIntrinsicContentSize];
+        [self.rootView setNeedsLayout];
+        return self;
+    };
+}
+
+#pragma mark - Content view
 
 - (UIView *)contentView {
 

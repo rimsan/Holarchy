@@ -23,7 +23,13 @@
 
 - (HOLVerticalFlowBuilder *(^)(CGFloat))withRightMargin;
 
+- (HOLVerticalFlowBuilder *(^)(CGFloat))withTopMargin;
+
+- (HOLVerticalFlowBuilder *(^)(CGFloat))withBottonMargin;
+
 - (HOLVerticalFlowBuilder *(^)(CGFloat))withHeight;
+
+- (HOLVerticalFlowBuilder *(^)(UIEdgeInsets))withInsets;
 
 - (instancetype)initWithScrollView:(UIScrollView *)scrollView DEPRECATED_MSG_ATTRIBUTE("use initWithRootView instead.");
 

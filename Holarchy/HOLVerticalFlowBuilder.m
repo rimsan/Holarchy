@@ -15,7 +15,6 @@
     return nil;
 }
 
-
 - (instancetype)initWithScrollView:(UIScrollView *)scrollView {
 
     return [self initWithRootView:scrollView];
@@ -27,18 +26,37 @@
     return self;
 }
 
+#pragma mark - Insets
 
 - (HOLVerticalFlowBuilder *(^)(CGFloat))withLeftMargin {
 
     return (HOLVerticalFlowBuilder *(^)(CGFloat)) [self withExternalPrimaryEdgeMargin];
 }
 
-
 - (HOLVerticalFlowBuilder *(^)(CGFloat))withRightMargin {
 
     return (HOLVerticalFlowBuilder *(^)(CGFloat)) [self withExternalSecondaryEdgeMargin];
 }
 
+- (HOLVerticalFlowBuilder *(^)(CGFloat))withTopMargin {
+
+    return (HOLVerticalFlowBuilder *(^)(CGFloat)) [self withLeadingEdgeMargin];
+}
+
+- (HOLVerticalFlowBuilder *(^)(CGFloat))withBottonMargin {
+
+    return (HOLVerticalFlowBuilder *(^)(CGFloat)) [self withTrailingEdgeMargin];
+}
+
+- (HOLVerticalFlowBuilder *(^)(UIEdgeInsets))withInsets {
+
+    return ^HOLVerticalFlowBuilder *(UIEdgeInsets insets) {
+        return (HOLVerticalFlowBuilder *) [self withPrimarySecondaryLeadingTrailingMargins](insets.left, insets.right, insets.top, insets.bottom);
+    };
+}
+
+
+#pragma mark - Size
 
 - (HOLVerticalFlowBuilder *(^)(CGFloat))withHeight {
 

@@ -23,6 +23,7 @@ typedef NS_ENUM(NSInteger, HOLFlowDirection) {
 @property (nonatomic, strong) NSArray *views;
 @property (nonatomic, strong) UIView *container;
 @property (nonatomic, readonly) BOOL isVerticalFlow;
+@property (nonatomic, strong) NSLayoutConstraint *lastLeadingConstraint;
 @property (nonatomic, strong) NSLayoutConstraint *lastTrailingConstraint;
 @property (nonatomic, strong) NSLayoutConstraint *lastExternalPrimaryEdgeConstraint;
 @property (nonatomic, strong) NSLayoutConstraint *lastExternalSecondaryEdgeConstraint;
@@ -42,6 +43,12 @@ typedef NS_ENUM(NSInteger, HOLFlowDirection) {
 - (HOLFlowBuilder *(^)(CGFloat))withExternalPrimaryEdgeMargin;
 
 - (HOLFlowBuilder *(^)(CGFloat))withExternalSecondaryEdgeMargin;
+
+- (HOLFlowBuilder *(^)(CGFloat))withLeadingEdgeMargin;
+
+- (HOLFlowBuilder *(^)(CGFloat))withTrailingEdgeMargin;
+
+- (HOLFlowBuilder *(^)(CGFloat, CGFloat, CGFloat, CGFloat))withPrimarySecondaryLeadingTrailingMargins;
 
 - (HOLFlowBuilder *(^)(CGFloat))withLastViewSizeConstant;
 
